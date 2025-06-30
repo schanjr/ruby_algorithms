@@ -32,4 +32,8 @@ task :doc do
   end
 end
 
+task :open do
+  Rake::Task["open"].invoke
+  sh " open doc/index.html "
+end
 

@@ -2,9 +2,18 @@ GEM
   remote: https://rubygems.org/
   specs:
     bitarray (1.2.0)
+    docile (1.4.0)
     murmurhash3 (0.1.6)
     murmurhash3 (0.1.6-java)
-    yard (0.9.36)
+    simplecov (0.22.0)
+      docile (~> 1.1)
+      simplecov-html (~> 0.11)
+      simplecov_json_formatter (~> 0.1)
+    simplecov-html (0.12.3)
+    simplecov_json_formatter (0.1.4)
+    webrick (1.7.0)
+    yard (0.9.27)
+      webrick (~> 1.7.0)
 
 PLATFORMS
   java
@@ -13,6 +22,7 @@ PLATFORMS
 DEPENDENCIES
   bitarray
   murmurhash3
+  simplecov (~> 0.22.0)
   yard
 
 BUNDLED WITH

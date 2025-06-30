@@ -9,48 +9,65 @@
 def quick_sort(array, first, last)
   if first < last
     j = partition(array, first, last)
-    puts "*" * 40
-    puts "pivot provided is #{j}"
-    quick_sort(array, first, j-1)
-    quick_sort(array, j+1, last)
+    puts "*" * 50
+
+    quick_sort(array, first, j - 1)
+    quick_sort(array, j + 1, last)
   end
   array
 end
 
 def partition(array, first, last)
-  puts "*" * 20
-  puts "partitioning range: #{first}, #{last}"
+  puts "-" * 100
+  puts "sorting contents #{array[first..last]} pivot: [#{array[last]}]"
+  arr_beginning = array.dup
+
   left = first
   right = first
   while right < last
-    puts "##### starting positions: left: #{left}, right:#{right}"
+    puts "##### starting index positions: left: #{left}, right:#{right}"
     if array[right] <= array[last] # array last is pivot
-      unless left == right
-        puts "Swapping inner loop before:#{array.to_s}"
+      if left != right
+        ###################### for visual purposes ###########################
+        puts "Swapping inner loop: "                                         #
+        puts "left index: #{left}      right index: #{right}"                #
+        str_put = "["                                                        #
+        0.upto(array.size - 1).each do |i|                              #
+          if i == left || i == right                                         #
+            str_put += ">#{array[i]}<"                                       #
+          else                                                               #
+            str_put += "#{array[i]}"                                         #
+          end                                                                #
+          str_put += ", " unless i == array.size - 1                        #
+        end                                                                  #
+        str_put += "]"                                                       #
+        puts str_put + " pivot [#{array[last]}]"                             #
+        ######################################################################
         array[right], array[left] = array[left], array[right]
-        puts "Swapping inner loop after: #{array.to_s}"
       end
       left += 1
     end
     right += 1
-    puts "##### ending positions: left: #{left}, right:#{right}"
+    puts "##### ending index positions:   left: #{left}, right:#{right}"
     puts
   end
   # swap left and pivot at the end of loop
-  puts "Exchanging Pivot Before: #{array.to_s}"
+  puts "Exchanging Pivot: left index: #{left} last: #{last}"
   array[left], array[last] = array[last], array[left]
-  puts "Exchanging Pivot After: #{array.to_s}"
-  puts
-  return left
-end
 
-arr = [4,5,8,10,3,3,2,1, 12, 18]
-puts quick_sort(arr, 0, arr.size - 1  ).to_s
+  puts "partition beginning: #{arr_beginning.to_s}"
+  puts "partition    ending: #{array.to_s}"
+  puts "-" * 100
+  puts
+  left
+end
 
 
 
 def quick_sort_simple(arr)
-  return arr if arr.length <= 1
+  if arr.length <= 1
+    return arr
+  end
   pivot = arr.pop
   less = []
   greater = []
@@ -64,5 +81,9 @@ def quick_sort_simple(arr)
   quick_sort_simple(less) + [pivot] + quick_sort_simple(greater)
 end
 
-puts quick_sort_simple(arr).to_s
+
+arr = [20, 21, 4, 5, 8, 10, 3, 3, 2, 1, 12, 18, 7]
+arr2 = arr.dup
+puts "quick sort pointer method" , quick_sort(arr, 0, arr.size - 1).to_s
+puts "quick sort simple array method", quick_sort_simple(arr2).to_s
 

@@ -21,7 +21,7 @@ def minimum_window_substring(s, t)
   return "" unless t || s
 
   # count all the unique characters and store in hash of "t". This will be used for comparison throughout.
-  dict_t = t.each_char.with_object(Hash.new(0)) { |c,h| h[c] += 1 }
+  dict_t = t.chars.tally
   # count of required characters minimally. If formed == required, this window has all the required characters.
   required = dict_t.size
   formed = 0
@@ -51,7 +51,7 @@ def minimum_window_substring(s, t)
       character = s[l]
 
       if r - l + 1 < ans[0]
-        ans = r-l+1, l, r
+        ans = r - l + 1, l, r
       end
 
       # because we move the left pointer at the end of the loop, we update the window_counts
@@ -71,7 +71,7 @@ def minimum_window_substring(s, t)
   if ans[0] == Float::INFINITY
     return ""
   else
-    s[ans[1],ans[2] - ans[1] + 1]
+    s[ans[1], ans[2] - ans[1] + 1]
   end
 end
 

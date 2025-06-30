@@ -19,6 +19,15 @@ class LRUCache
     @tail.prev = @head
   end
 
+  def show_order
+    list = []
+    node = @head
+    while node
+      list << [@head.key, @head.value]
+      node = @head.next
+    end
+    puts list.to_s
+  end
   def get(key)
     if @dic.key?(key)
       node = @dic[key]
@@ -37,7 +46,7 @@ class LRUCache
       insert_into_head(node)
       node.value = value
     else
-      if @dic.size >= @capacity
+      if @dic.size > @capacity
         remove_from_tail
       end
       node = ListNode.new(key, value)
@@ -61,8 +70,20 @@ class LRUCache
 
   def remove_from_tail
     return if @dic.empty?
-    tail_node = @tail.prev
+    tail_node = @tail
     @dic.delete(tail_node.key)
     remove_from_list(tail_node)
   end
 end
+
+lru = LRUCache.new(5)
+lru.put('k1','v1')
+lru.put('k2','v2')
+lru.put('k3','v3')
+lru.put('k4','v4')
+lru.put('k5','v5')
+
+puts lru.get('k1')
+puts lru.get('k3')
+
+puts lru.show_order

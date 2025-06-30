@@ -6,3 +6,5 @@ gem 'bitarray'
 group :doc do
   gem 'yard'            # documentation
 end
+
+gem "simplecov", "~> 0.22.0"
