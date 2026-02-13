@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>module PopularAlgorithms::Backtracking - Test</title>
+
+
+  <meta
+    name="keywords"
+    content="ruby,module,PopularAlgorithms::Backtracking"
+  >
+
+    <meta
+      name="description"
+      content="module PopularAlgorithms::Backtracking: Backtracking module"
+    >
+
+
+
+
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="module PopularAlgorithms::Backtracking - Test">
+
+
+
+    <meta property="og:description" content="Backtracking module">
+
+
+
+
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="module PopularAlgorithms::Backtracking - Test">
+
+
+
+    <meta name="twitter:description" content="Backtracking module">
+
+
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script
+  src="../js/theme-toggle.js?v=7.1.0"
+></script>
+
+<script
+  src="../js/search_navigation.js?v=7.1.0"
+  defer
+></script>
+
+<script
+  src="../js/search_data.js?v=7.1.0"
+  defer
+></script>
+
+<script
+  src="../js/search_ranker.js?v=7.1.0"
+  defer
+></script>
+
+<script
+  src="../js/search_controller.js?v=7.1.0"
+  defer
+></script>
+
+<script
+  src="../js/c_highlighter.js?v=7.1.0"
+  defer
+></script>
+
+<script
+  src="../js/aliki.js?v=7.1.0"
+  defer
+></script>
+
+<link
+  href="../css/rdoc.css?v=7.1.0"
+  rel="stylesheet"
+>
+
+
+
+
+<body role="document" class="module has-toc">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <!-- Chevron (right arrow) - used for expand/collapse -->
+  <symbol
+    id="icon-chevron"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </symbol>
+
+  <!-- File/Document - Pages section -->
+  <symbol
+    id="icon-file"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path
+      d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"
+    ></path>
+
+    <polyline points="14 2 14 8 20 8"></polyline>
+  </symbol>
+
+  <!-- Layers/Stack - Classes and Modules section -->
+  <symbol
+    id="icon-layers"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+    <polyline points="2 17 12 22 22 17"></polyline>
+    <polyline points="2 12 12 17 22 12"></polyline>
+  </symbol>
+
+  <!-- Curly braces with C - Class Methods section -->
+  <symbol
+    id="icon-class-methods"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text
+      x="12"
+      y="17"
+      text-anchor="middle"
+      font-size="13"
+      font-weight="bold"
+      fill="currentColor"
+      stroke="none"
+    >
+      C
+    </text>
+  </symbol>
+
+  <!-- Curly braces with I - Instance Methods section -->
+  <symbol
+    id="icon-instance-methods"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text
+      x="12"
+      y="17"
+      text-anchor="middle"
+      font-size="13"
+      font-weight="bold"
+      fill="currentColor"
+      stroke="none"
+    >
+      I
+    </text>
+  </symbol>
+
+  <!-- Double chevrons up - Ancestors section -->
+  <symbol
+    id="icon-ancestors"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="17 11 12 6 7 11"></polyline>
+    <polyline points="17 18 12 13 7 18"></polyline>
+  </symbol>
+
+  <!-- User with plus - Included Modules section -->
+  <symbol
+    id="icon-includes"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+
+    <line
+      x1="20"
+      y1="8"
+      x2="20"
+      y2="14"
+    ></line>
+
+    <line
+      x1="23"
+      y1="11"
+      x2="17"
+      y2="11"
+    ></line>
+  </symbol>
+
+  <!-- User with check - Extended Modules section -->
+  <symbol
+    id="icon-extends"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+    <polyline points="17 11 19 13 23 9"></polyline>
+  </symbol>
+
+  <!-- List - Sections section -->
+  <symbol
+    id="icon-list"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <line
+      x1="8"
+      y1="6"
+      x2="21"
+      y2="6"
+    ></line>
+
+    <line
+      x1="8"
+      y1="12"
+      x2="21"
+      y2="12"
+    ></line>
+
+    <line
+      x1="8"
+      y1="18"
+      x2="21"
+      y2="18"
+    ></line>
+
+    <line
+      x1="3"
+      y1="6"
+      x2="3.01"
+      y2="6"
+    ></line>
+
+    <line
+      x1="3"
+      y1="12"
+      x2="3.01"
+      y2="12"
+    ></line>
+
+    <line
+      x1="3"
+      y1="18"
+      x2="3.01"
+      y2="18"
+    ></line>
+  </symbol>
+</svg>
+
+<header class="top-navbar">
+  <a href="../index.html" class="navbar-brand">
+    Test
+  </a>
+
+  <!-- Desktop search bar -->
+  <div class="navbar-search navbar-search-desktop" role="search">
+    <form action="#" method="get" accept-charset="utf-8">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results-desktop"
+             type="text" name="search" placeholder="Search (/) for a class, method..."
+             spellcheck="false" autocomplete="off"
+             title="Type to search, Up and Down to navigate, Enter to load">
+      <ul id="search-results-desktop" aria-label="Search Results"
+          aria-busy="false" aria-expanded="false"
+          aria-atomic="false" class="initially-hidden search-results"></ul>
+    </form>
+  </div>
+
+  <!-- Mobile search icon button -->
+  <button id="search-toggle" class="navbar-search-mobile" aria-label="Open search" type="button">
+    <span aria-hidden="true">🔍</span>
+  </button>
+
+  <!-- Theme toggle button -->
+  <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" type="button">
+    <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+  </button>
+</header>
+
+<!-- Search Modal (Mobile) -->
+<div id="search-modal" class="search-modal" hidden aria-modal="true" role="dialog" aria-label="Search">
+  <div class="search-modal-backdrop"></div>
+  <div class="search-modal-content">
+    <div class="search-modal-header">
+      <form class="search-modal-form" action="#" method="get" accept-charset="utf-8">
+        <span class="search-modal-icon" aria-hidden="true">🔍</span>
+        <input id="search-field-mobile" role="combobox" aria-label="Search"
+               aria-autocomplete="list" aria-controls="search-results-mobile"
+               type="text" name="search" placeholder="Search documentation"
+               spellcheck="false" autocomplete="off">
+        <button type="button" class="search-modal-close" aria-label="Close search" id="search-modal-close">
+          <span aria-hidden="true">esc</span>
+        </button>
+      </form>
+    </div>
+    <div class="search-modal-body">
+      <ul id="search-results-mobile" aria-label="Search Results"
+          aria-busy="false" aria-expanded="false"
+          aria-atomic="false" class="search-results search-modal-results initially-hidden"></ul>
+      <div class="search-modal-empty">
+        <p>No recent searches</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="navigation-toggle" role="button" tabindex="0" aria-label="Toggle sidebar" aria-expanded="true" aria-controls="navigation">
+  <span aria-hidden="true">&#9776;</span>
+</div>
+
+
+<nav id="navigation" role="navigation" hidden>
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="nav-section">
+    <details class="nav-section-collapsible" open>
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg><use href="#icon-instance-methods"></use></svg>
+        </span>
+        <span class="nav-section-title">Instance Methods</span>
+        <span class="nav-section-chevron">
+          <svg><use href="#icon-chevron"></use></svg>
+        </span>
+      </summary>
+      <ul class="nav-list" role="directory">
+
+        <li ><a href="#method-i-backtrack">backtrack</a></li>
+
+        <li ><a href="#method-i-is_palindrome">is_palindrome</a></li>
+
+        <li ><a href="#method-i-letter_combinations_of_a_phone_number">letter_combinations_of_a_phone_number</a></li>
+
+        <li ><a href="#method-i-partition">partition</a></li>
+
+        <li ><a href="#method-i-remove_invalid_parentheses">remove_invalid_parentheses</a></li>
+
+        <li ><a href="#method-i-restore_ip_addresses">restore_ip_addresses</a></li>
+
+        <li ><a href="#method-i-subsets">subsets</a></li>
+
+        <li ><a href="#method-i-subsets_dfs">subsets_dfs</a></li>
+
+        <li ><a href="#method-i-valid_string-3F">valid_string?</a></li>
+
+      </ul>
+    </details>
+  </div>
+
+
+  <div id="classindex-section" class="nav-section">
+  <details class="nav-section-collapsible" open>
+    <summary class="nav-section-header">
+      <span class="nav-section-icon">
+        <svg><use href="#icon-layers"></use></svg>
+      </span>
+      <span class="nav-section-title">Classes and Modules</span>
+      <span class="nav-section-chevron">
+        <svg><use href="#icon-chevron"></use></svg>
+      </span>
+    </summary>
+
+    <ul class="link-list nav-list"><li><details><summary><code><a href="../DesignPatterns.html">DesignPatterns</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../DesignPatterns/Behavioral.html">Behavioral</a></code></summary><ul class="link-list nav-list"><li><code><a href="../DesignPatterns/Behavioral/AbstractCoffeeBrewer.html">AbstractCoffeeBrewer</a></code></li><li><code><a href="../DesignPatterns/Behavioral/Add.html">Add</a></code></li><li><code><a href="../DesignPatterns/Behavioral/BubbleSortStrategy.html">BubbleSortStrategy</a></code></li><li><code><a href="../DesignPatterns/Behavioral/CappuccinoCoffeeBrewer.html">CappuccinoCoffeeBrewer</a></code></li><li><code><a href="../DesignPatterns/Behavioral/Chatroom.html">Chatroom</a></code></li><li><code><a href="../DesignPatterns/Behavioral/ChatroomMediator.html">ChatroomMediator</a></code></li><li><code><a href="../DesignPatterns/Behavioral/ConcreteElementA.html">ConcreteElementA</a></code></li><li><code><a href="../DesignPatterns/Behavioral/ConcreteElementB.html">ConcreteElementB</a></code></li><li><code><a href="../DesignPatterns/Behavioral/Context.html">Context</a></code></li><li><code><a href="../DesignPatterns/Behavioral/CustomerService.html">CustomerService</a></code></li><li><code><a href="../DesignPatterns/Behavioral/CustomerServiceRepresentative.html">CustomerServiceRepresentative</a></code></li><li><code><a href="../DesignPatterns/Behavioral/DeliveredOrderState.html">DeliveredOrderState</a></code></li><li><code><a href="../DesignPatterns/Behavioral/Divide.html">Divide</a></code></li><li><code><a href="../DesignPatterns/Behavioral/Element.html">Element</a></code></li><li><code><a href="../DesignPatterns/Behavioral/EspressoCoffeeBrewer.html">EspressoCoffeeBrewer</a></code></li><li><code><a href="../DesignPatterns/Behavioral/Expression.html">Expression</a></code></li><li><code><a href="../DesignPatterns/Behavioral/Iterator.html">Iterator</a></code></li><li><code><a href="../DesignPatterns/Behavioral/LatteCoffeeBrewer.html">LatteCoffeeBrewer</a></code></li><li><code><a href="../DesignPatterns/Behavioral/Library.html">Library</a></code></li><li><code><a href="../DesignPatterns/Behavioral/LibraryIterator.html">LibraryIterator</a></code></li><li><code><a href="../DesignPatterns/Behavioral/Mediator.html">Mediator</a></code></li><li><code><a href="../DesignPatterns/Behavioral/MergeSortStrategy.html">MergeSortStrategy</a></code></li><li><code><a href="../DesignPatterns/Behavioral/Multiply.html">Multiply</a></code></li><li><code><a href="../DesignPatterns/Behavioral/NullCustomerServiceRepresentative.html">NullCustomerServiceRepresentative</a></code></li><li><code><a href="../DesignPatterns/Behavioral/Number.html">Number</a></code></li><li><code><a href="../DesignPatterns/Behavioral/Order.html">Order</a></code></li><li><code><a href="../DesignPatterns/Behavioral/OrderState.html">OrderState</a></code></li><li><code><a href="../DesignPatterns/Behavioral/PendingOrderState.html">PendingOrderState</a></code></li><li><code><a href="../DesignPatterns/Behavioral/ProcessingOrderState.html">ProcessingOrderState</a></code></li><li><code><a href="../DesignPatterns/Behavioral/QuickSortStrategy.html">QuickSortStrategy</a></code></li><li><code><a href="../DesignPatterns/Behavioral/ShippedOrderState.html">ShippedOrderState</a></code></li><li><code><a href="../DesignPatterns/Behavioral/Sorter.html">Sorter</a></code></li><li><code><a href="../DesignPatterns/Behavioral/SortingStrategy.html">SortingStrategy</a></code></li><li><code><a href="../DesignPatterns/Behavioral/Subtract.html">Subtract</a></code></li><li><code><a href="../DesignPatterns/Behavioral/TextEditor.html">TextEditor</a></code></li><li><code><a href="../DesignPatterns/Behavioral/TextEditorMemento.html">TextEditorMemento</a></code></li><li><code><a href="../DesignPatterns/Behavioral/User.html">User</a></code></li><li><code><a href="../DesignPatterns/Behavioral/UserObserver.html">UserObserver</a></code></li><li><code><a href="../DesignPatterns/Behavioral/Visitor.html">Visitor</a></code></li></ul></details></li><li><details><summary><code><a href="../DesignPatterns/Creational.html">Creational</a></code></summary><ul class="link-list nav-list"><li><code><a href="../DesignPatterns/Creational/AbstractCarFactory.html">AbstractCarFactory</a></code></li><li><code><a href="../DesignPatterns/Creational/Animal.html">Animal</a></code></li><li><code><a href="../DesignPatterns/Creational/Assembler.html">Assembler</a></code></li><li><code><a href="../DesignPatterns/Creational/BankAccount.html">BankAccount</a></code></li><li><code><a href="../DesignPatterns/Creational/Bird.html">Bird</a></code></li><li><code><a href="../DesignPatterns/Creational/Builder.html">Builder</a></code></li><li><code><a href="../DesignPatterns/Creational/Cat.html">Cat</a></code></li><li><code><a href="../DesignPatterns/Creational/CatStore.html">CatStore</a></code></li><li><code><a href="../DesignPatterns/Creational/Command.html">Command</a></code></li><li><code><a href="../DesignPatterns/Creational/ComplaintHandler.html">ComplaintHandler</a></code></li><li><code><a href="../DesignPatterns/Creational/ConcreteBuilder1.html">ConcreteBuilder1</a></code></li><li><code><a href="../DesignPatterns/Creational/ConcreteBuilder2.html">ConcreteBuilder2</a></code></li><li><code><a href="../DesignPatterns/Creational/CustomerServiceRepresentative.html">CustomerServiceRepresentative</a></code></li><li><code><a href="../DesignPatterns/Creational/DatabaseConnection.html">DatabaseConnection</a></code></li><li><code><a href="../DesignPatterns/Creational/DatabaseConnectionPool.html">DatabaseConnectionPool</a></code></li><li><code><a href="../DesignPatterns/Creational/Director.html">Director</a></code></li><li><code><a href="../DesignPatterns/Creational/Dog.html">Dog</a></code></li><li><code><a href="../DesignPatterns/Creational/DogStore.html">DogStore</a></code></li><li><code><a href="../DesignPatterns/Creational/Employee.html">Employee</a></code></li><li><code><a href="../DesignPatterns/Creational/Fish.html">Fish</a></code></li><li><code><a href="../DesignPatterns/Creational/FishStore.html">FishStore</a></code></li><li><code><a href="../DesignPatterns/Creational/HatchbackAssembler.html">HatchbackAssembler</a></code></li><li><code><a href="../DesignPatterns/Creational/Manager.html">Manager</a></code></li><li><code><a href="../DesignPatterns/Creational/MoveBackwardCommand.html">MoveBackwardCommand</a></code></li><li><code><a href="../DesignPatterns/Creational/MoveForwardCommand.html">MoveForwardCommand</a></code></li><li><code><a href="../DesignPatterns/Creational/PetStore.html">PetStore</a></code></li><li><code><a href="../DesignPatterns/Creational/Product.html">Product</a></code></li><li><code><a href="../DesignPatterns/Creational/RemoteControl.html">RemoteControl</a></code></li><li><code><a href="../DesignPatterns/Creational/SUVAssembler.html">SUVAssembler</a></code></li><li><code><a href="../DesignPatterns/Creational/SedanAssembler.html">SedanAssembler</a></code></li><li><code><a href="../DesignPatterns/Creational/TeamLeader.html">TeamLeader</a></code></li><li><code><a href="../DesignPatterns/Creational/ToyCar.html">ToyCar</a></code></li><li><code><a href="../DesignPatterns/Creational/TurnLeftCommand.html">TurnLeftCommand</a></code></li><li><code><a href="../DesignPatterns/Creational/TurnRightCommand.html">TurnRightCommand</a></code></li></ul></details></li><li><details><summary><code><a href="../DesignPatterns/Structural.html">Structural</a></code></summary><ul class="link-list nav-list"><li><code><a href="../DesignPatterns/Structural/AIFFAudioFile.html">AIFFAudioFile</a></code></li><li><code><a href="../DesignPatterns/Structural/Adaptee.html">Adaptee</a></code></li><li><code><a href="../DesignPatterns/Structural/Adapter.html">Adapter</a></code></li><li><code><a href="../DesignPatterns/Structural/AudioFile.html">AudioFile</a></code></li><li><code><a href="../DesignPatterns/Structural/AudioPlayer.html">AudioPlayer</a></code></li><li><code><a href="../DesignPatterns/Structural/Character.html">Character</a></code></li><li><code><a href="../DesignPatterns/Structural/CharacterFactory.html">CharacterFactory</a></code></li><li><code><a href="../DesignPatterns/Structural/ChocolateDecorator.html">ChocolateDecorator</a></code></li><li><code><a href="../DesignPatterns/Structural/Coffee.html">Coffee</a></code></li><li><code><a href="../DesignPatterns/Structural/CoffeeDecorator.html">CoffeeDecorator</a></code></li><li><code><a href="../DesignPatterns/Structural/Employee.html">Employee</a></code></li><li><code><a href="../DesignPatterns/Structural/EmployeeGroup.html">EmployeeGroup</a></code></li><li><code><a href="../DesignPatterns/Structural/MP3AudioFile.html">MP3AudioFile</a></code></li><li><code><a href="../DesignPatterns/Structural/Menu.html">Menu</a></code></li><li><code><a href="../DesignPatterns/Structural/MilkDecorator.html">MilkDecorator</a></code></li><li><code><a href="../DesignPatterns/Structural/OrderFacade.html">OrderFacade</a></code></li><li><code><a href="../DesignPatterns/Structural/RemoteFileSystem.html">RemoteFileSystem</a></code></li><li><code><a href="../DesignPatterns/Structural/RemoteFileSystemProxy.html">RemoteFileSystemProxy</a></code></li><li><code><a href="../DesignPatterns/Structural/SalaryPolicy.html">SalaryPolicy</a></code></li><li><code><a href="../DesignPatterns/Structural/SugarDecorator.html">SugarDecorator</a></code></li><li><code><a href="../DesignPatterns/Structural/Target.html">Target</a></code></li><li><code><a href="../DesignPatterns/Structural/WAVAudioFile.html">WAVAudioFile</a></code></li></ul></details></li></ul></details></li><li><details><summary><code><a href="../MixedDataStructures.html">MixedDataStructures</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../MixedDataStructures/Cache.html">Cache</a></code></summary><ul class="link-list nav-list"><li><code><a href="../MixedDataStructures/Cache/LRUCache.html">LRUCache</a></code></li><li><code><a href="../MixedDataStructures/Cache/ListNode.html">ListNode</a></code></li></ul></details></li></ul></details></li><li><details><summary><code><a href="../PopularAlgorithms.html">PopularAlgorithms</a></code></summary><ul class="link-list nav-list"><li><code><a href="../PopularAlgorithms/Arrays.html">Arrays</a></code></li><li><code><a href="../PopularAlgorithms/Backtracking.html">Backtracking</a></code></li><li><details><summary><code><a href="../PopularAlgorithms/Dag.html">Dag</a></code></summary><ul class="link-list nav-list"><li><code><a href="../PopularAlgorithms/Dag/City.html">City</a></code></li></ul></details></li><li><details><summary><code><a href="../PopularAlgorithms/DynamicProgramming.html">DynamicProgramming</a></code></summary><ul class="link-list nav-list"><li><code><a href="../PopularAlgorithms/DynamicProgramming/MinimumDifficultyOfAJobSchedule.html">MinimumDifficultyOfAJobSchedule</a></code></li></ul></details></li><li><code><a href="../PopularAlgorithms/Graph.html">Graph</a></code></li><li><details><summary><code><a href="../PopularAlgorithms/LinkedList.html">LinkedList</a></code></summary><ul class="link-list nav-list"><li><code><a href="../PopularAlgorithms/LinkedList/ListNode.html">ListNode</a></code></li></ul></details></li><li><code><a href="../PopularAlgorithms/Matrix.html">Matrix</a></code></li><li><code><a href="../PopularAlgorithms/Numbers.html">Numbers</a></code></li><li><code><a href="../PopularAlgorithms/Permutations.html">Permutations</a></code></li><li><details><summary><code><a href="../PopularAlgorithms/PopularAlgorithms.html">PopularAlgorithms</a></code></summary><ul class="link-list nav-list"><li><code><a href="../PopularAlgorithms/PopularAlgorithms/DynamicProgramming.html">DynamicProgramming</a></code></li></ul></details></li><li><code><a href="../PopularAlgorithms/Sampling.html">Sampling</a></code></li><li><code><a href="../PopularAlgorithms/Sorting.html">Sorting</a></code></li><li><code><a href="../PopularAlgorithms/Strings.html">Strings</a></code></li><li><code><a href="../PopularAlgorithms/Trees.html">Trees</a></code></li></ul></details></li><li><details><summary><code><a href="../PopularDataStructures.html">PopularDataStructures</a></code></summary><ul class="link-list nav-list"><li><code><a href="../PopularDataStructures/DoublyLinkedList.html">DoublyLinkedList</a></code></li><li><details><summary><code><a href="../PopularDataStructures/HashTable.html">HashTable</a></code></summary><ul class="link-list nav-list"><li><code><a href="../PopularDataStructures/HashTable/LinkedList.html">LinkedList</a></code></li><li><code><a href="../PopularDataStructures/HashTable/Node.html">Node</a></code></li><li><code><a href="../PopularDataStructures/HashTable/SeparateChaining.html">SeparateChaining</a></code></li><li><code><a href="../PopularDataStructures/HashTable/UniversalHash.html">UniversalHash</a></code></li></ul></details></li><li><code><a href="../PopularDataStructures/LinkedList.html">LinkedList</a></code></li><li><code><a href="../PopularDataStructures/MinHeap.html">MinHeap</a></code></li><li><code><a href="../PopularDataStructures/Node.html">Node</a></code></li><li><details><summary><code><a href="../PopularDataStructures/Probabilistic.html">Probabilistic</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../PopularDataStructures/Probabilistic/DSkipList.html">DSkipList</a></code></summary><ul class="link-list nav-list"><li><code><a href="../PopularDataStructures/Probabilistic/DSkipList/Node.html">Node</a></code></li></ul></details></li></ul></details></li><li><details><summary><code><a href="../PopularDataStructures/Queues.html">Queues</a></code></summary><ul class="link-list nav-list"><li><code><a href="../PopularDataStructures/Queues/DynamicCircularBuffer.html">DynamicCircularBuffer</a></code></li></ul></details></li><li><details><summary><code><a href="../PopularDataStructures/Stacks.html">Stacks</a></code></summary><ul class="link-list nav-list"><li><code><a href="../PopularDataStructures/Stacks/SortableStacks.html">SortableStacks</a></code></li><li><code><a href="../PopularDataStructures/Stacks/Stacks.html">Stacks</a></code></li></ul></details></li><li><details><summary><code><a href="../PopularDataStructures/Trees.html">Trees</a></code></summary><ul class="link-list nav-list"><li><code><a href="../PopularDataStructures/Trees/Trie.html">Trie</a></code></li></ul></details></li></ul></details></li><li><code><a href="../Snippets.html">Snippets</a></code></li><li><details><summary><code><a href="../SupportTools.html">SupportTools</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SupportTools/EasyBenchmark.html">EasyBenchmark</a></code></li></ul></details></li><li><details><summary><code><a href="../Tcp.html">Tcp</a></code></summary><ul class="link-list nav-list"><li><code><a href="../Tcp/ChatroomClient.html">ChatroomClient</a></code></li><li><code><a href="../Tcp/ChatroomServer.html">ChatroomServer</a></code></li></ul></details></li></ul>
+  </details>
+</div>
+
+</nav>
+
+<main role="main" aria-labelledby="module-popularalgorithms-backtracking">
+  
+  
+    <ol role="navigation" aria-label="Breadcrumb navigation" class="breadcrumb">
+      
+      <li>
+        
+        <a href="../PopularAlgorithms.html">PopularAlgorithms</a><span>::</span>
+        
+      </li>
+      
+      <li>
+        
+        <span>Backtracking</span>
+        
+      </li>
+      
+    </ol>
+  
+
+  <span id="module-PopularAlgorithms::Backtracking" class="legacy-anchor"></span>
+  <h1 id="module-popularalgorithms-backtracking" class="anchor-link module">
+    module PopularAlgorithms::Backtracking
+  </h1>
+
+  <section class="description">
+    
+<p><a href="Backtracking.html"><code>Backtracking</code></a> module</p>
+
+  </section>
+
+
+  <span id="5Buntitled-5D" class="legacy-anchor"></span>
+  <section id="untitled" class="documentation-section anchor-link">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     <section id="public-instance-untitled-method-details" class="method-section anchor-link">
+       <header>
+         <h3 id="public-instance-methods"><a href="#public-instance-methods">Public Instance Methods</a></h3>
+       </header>
+
+
+      <div id="method-i-backtrack" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-backtrack" title="Link to this method">
+                <span class="method-name">backtrack</span>
+                <span class="method-args">(s, curr, result)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="backtrack-source">
+            <pre class="ruby">     <span class="ruby-comment"># File doc_wrappers/comprehensive_namespaces.rb</span>
+<span class="line-num">3448</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">backtrack</span>(<span class="ruby-identifier">s</span>, <span class="ruby-identifier">curr</span>, <span class="ruby-identifier">result</span>)
+<span class="line-num">3449</span>   <span class="ruby-keyword">if</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+<span class="line-num">3450</span>     <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">curr</span>.<span class="ruby-identifier">dup</span>
+<span class="line-num">3451</span>   <span class="ruby-keyword">end</span>
+<span class="line-num">3452</span> 
+<span class="line-num">3453</span>   <span class="ruby-identifier">sample</span> = <span class="ruby-string">&quot;&quot;</span>
+<span class="line-num">3454</span>   <span class="ruby-identifier">s</span>.<span class="ruby-identifier">each_char</span>.<span class="ruby-identifier">with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">char</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">|</span>
+<span class="line-num">3455</span>     <span class="ruby-identifier">sample</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">char</span>
+<span class="line-num">3456</span>     <span class="ruby-identifier">backtrack</span>(<span class="ruby-identifier">s</span>[(<span class="ruby-identifier">index</span><span class="ruby-value">+1</span>)<span class="ruby-operator">..</span><span class="ruby-value">-1</span>], <span class="ruby-identifier">curr</span> <span class="ruby-operator">+</span> [<span class="ruby-identifier">sample</span>], <span class="ruby-identifier">result</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">is_palindrome</span>(<span class="ruby-identifier">sample</span>)
+<span class="line-num">3457</span>   <span class="ruby-keyword">end</span>
+<span class="line-num">3458</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-is_palindrome" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-is_palindrome" title="Link to this method">
+                <span class="method-name">is_palindrome</span>
+                <span class="method-args">(s)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="is_palindrome-source">
+            <pre class="ruby">     <span class="ruby-comment"># File doc_wrappers/comprehensive_namespaces.rb</span>
+<span class="line-num">3460</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">is_palindrome</span>(<span class="ruby-identifier">s</span>)
+<span class="line-num">3461</span>   <span class="ruby-identifier">s</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">reverse</span>
+<span class="line-num">3462</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-letter_combinations_of_a_phone_number" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-letter_combinations_of_a_phone_number" title="Link to this method">
+                <span class="method-name">letter_combinations_of_a_phone_number</span>
+                <span class="method-args">(digits)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="letter_combinations_of_a_phone_number-source">
+            <pre class="ruby">     <span class="ruby-comment"># File doc_wrappers/comprehensive_namespaces.rb</span>
+<span class="line-num">3404</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">letter_combinations_of_a_phone_number</span>(<span class="ruby-identifier">digits</span>)
+<span class="line-num">3405</span>   <span class="ruby-identifier">digit_to_chars</span> = {
+<span class="line-num">3406</span>     <span class="ruby-string">&quot;2&quot;</span> <span class="ruby-operator">=&gt;</span> [<span class="ruby-string">&quot;a&quot;</span>, <span class="ruby-string">&quot;b&quot;</span>, <span class="ruby-string">&quot;c&quot;</span>],
+<span class="line-num">3407</span>     <span class="ruby-string">&quot;3&quot;</span> <span class="ruby-operator">=&gt;</span> [<span class="ruby-string">&quot;d&quot;</span>, <span class="ruby-string">&quot;e&quot;</span>, <span class="ruby-string">&quot;f&quot;</span>],
+<span class="line-num">3408</span>     <span class="ruby-string">&quot;4&quot;</span> <span class="ruby-operator">=&gt;</span> [<span class="ruby-string">&quot;g&quot;</span>, <span class="ruby-string">&quot;h&quot;</span>, <span class="ruby-string">&quot;i&quot;</span>],
+<span class="line-num">3409</span>     <span class="ruby-string">&quot;5&quot;</span> <span class="ruby-operator">=&gt;</span> [<span class="ruby-string">&quot;j&quot;</span>, <span class="ruby-string">&quot;k&quot;</span>, <span class="ruby-string">&quot;l&quot;</span>],
+<span class="line-num">3410</span>     <span class="ruby-string">&quot;6&quot;</span> <span class="ruby-operator">=&gt;</span> [<span class="ruby-string">&quot;m&quot;</span>, <span class="ruby-string">&quot;n&quot;</span>, <span class="ruby-string">&quot;o&quot;</span>],
+<span class="line-num">3411</span>     <span class="ruby-string">&quot;7&quot;</span> <span class="ruby-operator">=&gt;</span> [<span class="ruby-string">&quot;p&quot;</span>, <span class="ruby-string">&quot;q&quot;</span>, <span class="ruby-string">&quot;r&quot;</span>, <span class="ruby-string">&quot;s&quot;</span>],
+<span class="line-num">3412</span>     <span class="ruby-string">&quot;8&quot;</span> <span class="ruby-operator">=&gt;</span> [<span class="ruby-string">&quot;t&quot;</span>, <span class="ruby-string">&quot;u&quot;</span>, <span class="ruby-string">&quot;v&quot;</span>],
+<span class="line-num">3413</span>     <span class="ruby-string">&quot;9&quot;</span> <span class="ruby-operator">=&gt;</span> [<span class="ruby-string">&quot;w&quot;</span>, <span class="ruby-string">&quot;x&quot;</span>, <span class="ruby-string">&quot;y&quot;</span>, <span class="ruby-string">&quot;z&quot;</span>]
+<span class="line-num">3414</span>   }
+<span class="line-num">3415</span>   <span class="ruby-identifier">results</span> = []
+<span class="line-num">3416</span>   <span class="ruby-keyword">return</span> <span class="ruby-identifier">results</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">digits</span>.<span class="ruby-identifier">empty?</span>
+<span class="line-num">3417</span> 
+<span class="line-num">3418</span>   <span class="ruby-comment"># methods in ruby have closure, cannot access variables outside of the methods. But lambdas, Proc, stabby arrow (-&gt;) can .</span>
+<span class="line-num">3419</span>   <span class="ruby-identifier">backtrack</span> = <span class="ruby-identifier">lambda</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span>, <span class="ruby-identifier">current_string</span><span class="ruby-operator">|</span>
+<span class="line-num">3420</span>     <span class="ruby-comment"># puts &quot;i: #{i}, current_string, #{current_string}&quot;</span>
+<span class="line-num">3421</span>     <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_string</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">digits</span>.<span class="ruby-identifier">size</span>
+<span class="line-num">3422</span>       <span class="ruby-identifier">results</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">current_string</span>
+<span class="line-num">3423</span>       <span class="ruby-keyword">return</span>
+<span class="line-num">3424</span>     <span class="ruby-keyword">end</span>
+<span class="line-num">3425</span>     <span class="ruby-identifier">digit_to_chars</span>[<span class="ruby-identifier">digits</span>[<span class="ruby-identifier">i</span>]].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+<span class="line-num">3426</span>       <span class="ruby-identifier">backtrack</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">i</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>, <span class="ruby-identifier">current_string</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">c</span> )
+<span class="line-num">3427</span>     <span class="ruby-keyword">end</span>
+<span class="line-num">3428</span>   <span class="ruby-keyword">end</span>
+<span class="line-num">3429</span> 
+<span class="line-num">3430</span>   <span class="ruby-identifier">backtrack</span>.<span class="ruby-identifier">call</span>(<span class="ruby-value">0</span>, <span class="ruby-string">&quot;&quot;</span>)
+<span class="line-num">3431</span>   <span class="ruby-identifier">results</span>
+<span class="line-num">3432</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p><a href="https://leetcode.com/explore/interview/card/facebook/53/recursion-3/267/discuss/780232/Backtracking-Python-problems+-solutions-interview-prep">leetcode.com/explore/interview/card/facebook/53/recursion-3/267/discuss/780232/Backtracking-Python-problems+-solutions-interview-prep</a> <a href="https://leetcode.com/problems/letter-combinations-of-a-phone-number">leetcode.com/problems/letter-combinations-of-a-phone-number</a>/ <a href="https://www.youtube.com/watch?v=Zq4upTEaQyM">www.youtube.com/watch?v=Zq4upTEaQyM</a> # how to backtrack</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-partition" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-partition" title="Link to this method">
+                <span class="method-name">partition</span>
+                <span class="method-args">(s)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="partition-source">
+            <pre class="ruby">     <span class="ruby-comment"># File doc_wrappers/comprehensive_namespaces.rb</span>
+<span class="line-num">3442</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">partition</span>(<span class="ruby-identifier">s</span>)
+<span class="line-num">3443</span>   <span class="ruby-identifier">result</span> = []
+<span class="line-num">3444</span>   <span class="ruby-identifier">backtrack</span>(<span class="ruby-identifier">s</span>, [], <span class="ruby-identifier">result</span>)
+<span class="line-num">3445</span>   <span class="ruby-identifier">result</span>
+<span class="line-num">3446</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p><a href="https://leetcode.com/problems/palindrome-partitioning/description">leetcode.com/problems/palindrome-partitioning/description</a>/</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-remove_invalid_parentheses" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-remove_invalid_parentheses" title="Link to this method">
+                <span class="method-name">remove_invalid_parentheses</span>
+                <span class="method-args">(s)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="remove_invalid_parentheses-source">
+            <pre class="ruby">     <span class="ruby-comment"># File doc_wrappers/comprehensive_namespaces.rb</span>
+<span class="line-num">3474</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">remove_invalid_parentheses</span>(<span class="ruby-identifier">s</span>)
+<span class="line-num">3475</span>   <span class="ruby-comment"># Initialize a queue to store the strings that need to be processed</span>
+<span class="line-num">3476</span>   <span class="ruby-identifier">queue</span> = [<span class="ruby-identifier">s</span>]
+<span class="line-num">3477</span>   <span class="ruby-comment"># Initialize a set to store the strings that have already been processed</span>
+<span class="line-num">3478</span>   <span class="ruby-identifier">visited</span> = <span class="ruby-constant">Set</span>.<span class="ruby-identifier">new</span>
+<span class="line-num">3479</span>   <span class="ruby-comment"># Initialize a flag to keep track of whether we have found a valid string</span>
+<span class="line-num">3480</span>   <span class="ruby-identifier">found</span> = <span class="ruby-keyword">false</span>
+<span class="line-num">3481</span>   <span class="ruby-identifier">results</span> = []
+<span class="line-num">3482</span>   <span class="ruby-comment"># Loop through the queue</span>
+<span class="line-num">3483</span>   <span class="ruby-keyword">while</span> <span class="ruby-operator">!</span><span class="ruby-identifier">queue</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">do</span>
+<span class="line-num">3484</span>     <span class="ruby-comment"># Get the next string from the queue</span>
+<span class="line-num">3485</span>     <span class="ruby-identifier">str</span> = <span class="ruby-identifier">queue</span>.<span class="ruby-identifier">shift</span>
+<span class="line-num">3486</span>     <span class="ruby-comment"># Check if the string is valid</span>
+<span class="line-num">3487</span>     <span class="ruby-keyword">if</span> <span class="ruby-identifier">valid_string?</span>(<span class="ruby-identifier">str</span>)
+<span class="line-num">3488</span>       <span class="ruby-comment"># If it is valid, add it to the results and set the found flag to true</span>
+<span class="line-num">3489</span>       <span class="ruby-identifier">found</span> = <span class="ruby-keyword">true</span>
+<span class="line-num">3490</span>       <span class="ruby-identifier">results</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">str</span>
+<span class="line-num">3491</span>     <span class="ruby-keyword">end</span>
+<span class="line-num">3492</span>     <span class="ruby-comment"># If we have already found a valid string, we can stop processing the queue</span>
+<span class="line-num">3493</span>     <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">found</span>
+<span class="line-num">3494</span>     <span class="ruby-comment"># Otherwise, we need to remove one character at a time and add the modified strings to the queue</span>
+<span class="line-num">3495</span>     (<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">str</span>.<span class="ruby-identifier">length</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+<span class="line-num">3496</span>       <span class="ruby-comment"># Only consider removing characters that are parentheses</span>
+<span class="line-num">3497</span>       <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">str</span>[<span class="ruby-identifier">i</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;(&#39;</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">str</span>[<span class="ruby-identifier">i</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;)&#39;</span>
+<span class="line-num">3498</span>       <span class="ruby-comment"># Remove the character at index i</span>
+<span class="line-num">3499</span>       <span class="ruby-identifier">modified_str</span> = <span class="ruby-identifier">str</span>[<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">i</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">str</span>[<span class="ruby-identifier">i</span><span class="ruby-value">+1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>]
+<span class="line-num">3500</span>       <span class="ruby-comment"># Skip this string if we have already processed it</span>
+<span class="line-num">3501</span>       <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">visited</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">modified_str</span>)
+<span class="line-num">3502</span>       <span class="ruby-comment"># Add the modified string to the queue and the visited set</span>
+<span class="line-num">3503</span>       <span class="ruby-identifier">queue</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">modified_str</span>
+<span class="line-num">3504</span>       <span class="ruby-identifier">visited</span>.<span class="ruby-identifier">add</span>(<span class="ruby-identifier">modified_str</span>)
+<span class="line-num">3505</span>     <span class="ruby-keyword">end</span>
+<span class="line-num">3506</span>   <span class="ruby-keyword">end</span>
+<span class="line-num">3507</span> 
+<span class="line-num">3508</span>   <span class="ruby-comment"># Return the results</span>
+<span class="line-num">3509</span>   <span class="ruby-identifier">results</span>
+<span class="line-num">3510</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p><a href="https://leetcode.com/problems/remove-invalid-parentheses">leetcode.com/problems/remove-invalid-parentheses</a>/ @topics algorithms -</p>
+
+<pre class="ruby"><span class="ruby-operator">-</span> <span class="ruby-identifier">backtracking</span>
+<span class="ruby-operator">-</span> <span class="ruby-identifier">recursion</span>
+</pre>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-restore_ip_addresses" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-restore_ip_addresses" title="Link to this method">
+                <span class="method-name">restore_ip_addresses</span>
+                <span class="method-args">(s)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="restore_ip_addresses-source">
+            <pre class="ruby">     <span class="ruby-comment"># File doc_wrappers/comprehensive_namespaces.rb</span>
+<span class="line-num">3540</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">restore_ip_addresses</span>(<span class="ruby-identifier">s</span>)
+<span class="line-num">3541</span>   <span class="ruby-identifier">results</span> = []
+<span class="line-num">3542</span>   <span class="ruby-identifier">backtrack</span>(<span class="ruby-identifier">s</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&#39;&#39;</span>), [], <span class="ruby-identifier">results</span>)
+<span class="line-num">3543</span>   <span class="ruby-identifier">results</span>
+<span class="line-num">3544</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>each number need to be between 0-255. you must have 4 numbers separated by zero the starting number should have not a zero in front unless it is 0 itself</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-subsets" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-subsets" title="Link to this method">
+                <span class="method-name">subsets</span>
+                <span class="method-args">(nums)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="subsets-source">
+            <pre class="ruby">     <span class="ruby-comment"># File doc_wrappers/comprehensive_namespaces.rb</span>
+<span class="line-num">3569</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">subsets</span>(<span class="ruby-identifier">nums</span>)
+<span class="line-num">3570</span>   <span class="ruby-identifier">subsets</span> = [[]]
+<span class="line-num">3571</span>   <span class="ruby-identifier">nums</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">num</span><span class="ruby-operator">|</span>
+<span class="line-num">3572</span>     <span class="ruby-identifier">tmp_subset</span> = []
+<span class="line-num">3573</span>     <span class="ruby-identifier">subsets</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+<span class="line-num">3574</span>       <span class="ruby-identifier">tmp_subset</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">+</span> [<span class="ruby-identifier">num</span>]
+<span class="line-num">3575</span>     <span class="ruby-keyword">end</span>
+<span class="line-num">3576</span>     <span class="ruby-identifier">subsets</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">tmp_subset</span>
+<span class="line-num">3577</span>   <span class="ruby-keyword">end</span>
+<span class="line-num">3578</span>   <span class="ruby-identifier">subsets</span>
+<span class="line-num">3579</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p><a href="https://leetcode.com/problems/subsets">leetcode.com/problems/subsets</a>/ @topics algorithms -</p>
+
+<pre class="ruby"><span class="ruby-operator">-</span> <span class="ruby-identifier">backtracking</span>
+<span class="ruby-operator">-</span> <span class="ruby-identifier">permutations</span>
+</pre>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-subsets_dfs" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-subsets_dfs" title="Link to this method">
+                <span class="method-name">subsets_dfs</span>
+                <span class="method-args">(nums)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="subsets_dfs-source">
+            <pre class="ruby">     <span class="ruby-comment"># File doc_wrappers/comprehensive_namespaces.rb</span>
+<span class="line-num">3582</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">subsets_dfs</span>(<span class="ruby-identifier">nums</span>)
+<span class="line-num">3583</span>   <span class="ruby-identifier">result</span> = []
+<span class="line-num">3584</span>   <span class="ruby-identifier">dfs</span> = <span class="ruby-identifier">lambda</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">subset</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">|</span>
+<span class="line-num">3585</span>     <span class="ruby-keyword">if</span> <span class="ruby-identifier">index</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">nums</span>.<span class="ruby-identifier">size</span>
+<span class="line-num">3586</span>       <span class="ruby-identifier">result</span>.<span class="ruby-identifier">append</span>(<span class="ruby-identifier">subset</span>)
+<span class="line-num">3587</span>       <span class="ruby-keyword">return</span>
+<span class="line-num">3588</span>     <span class="ruby-keyword">end</span>
+<span class="line-num">3589</span>     <span class="ruby-identifier">dfs</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">subset</span> <span class="ruby-operator">+</span> [<span class="ruby-identifier">nums</span>[<span class="ruby-identifier">index</span>]], <span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)
+<span class="line-num">3590</span>     <span class="ruby-identifier">dfs</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">subset</span>, <span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)
+<span class="line-num">3591</span>   <span class="ruby-keyword">end</span>
+<span class="line-num">3592</span> 
+<span class="line-num">3593</span>   <span class="ruby-identifier">dfs</span>.<span class="ruby-identifier">call</span>([], <span class="ruby-value">0</span>)
+<span class="line-num">3594</span>   <span class="ruby-identifier">result</span>
+<span class="line-num">3595</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>dfs method</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-valid_string-3F" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-valid_string-3F" title="Link to this method">
+                <span class="method-name">valid_string?</span>
+                <span class="method-args">(str)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="valid_string-3F-source">
+            <pre class="ruby">     <span class="ruby-comment"># File doc_wrappers/comprehensive_namespaces.rb</span>
+<span class="line-num">3513</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">valid_string?</span>(<span class="ruby-identifier">str</span>)
+<span class="line-num">3514</span>   <span class="ruby-comment"># Initialize a counter to keep track of the number of open parentheses</span>
+<span class="line-num">3515</span>   <span class="ruby-identifier">counter</span> = <span class="ruby-value">0</span>
+<span class="line-num">3516</span>   <span class="ruby-comment"># Loop through the characters in the string</span>
+<span class="line-num">3517</span>   <span class="ruby-identifier">str</span>.<span class="ruby-identifier">each_char</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+<span class="line-num">3518</span>     <span class="ruby-comment"># If we encounter an open parenthesis, increment the counter</span>
+<span class="line-num">3519</span>     <span class="ruby-identifier">counter</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;(&#39;</span>
+<span class="line-num">3520</span>     <span class="ruby-comment"># If we encounter a close parenthesis, decrement the counter</span>
+<span class="line-num">3521</span>     <span class="ruby-identifier">counter</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;)&#39;</span>
+<span class="line-num">3522</span>     <span class="ruby-comment"># If the counter becomes negative, the string is invalid</span>
+<span class="line-num">3523</span>     <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">counter</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span>
+<span class="line-num">3524</span>   <span class="ruby-keyword">end</span>
+<span class="line-num">3525</span>   <span class="ruby-comment"># If the counter is not zero, the string is invalid</span>
+<span class="line-num">3526</span>   <span class="ruby-keyword">return</span> <span class="ruby-identifier">counter</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+<span class="line-num">3527</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>This helper function checks if a string is valid</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+    </section>
+
+
+
+
+  </section>
+
+</main>
+
+<aside class="table-of-contents" role="complementary" aria-label="Table of Contents">
+  <div class="toc-sticky">
+    <h3 class="toc-heading">On This Page</h3>
+    <nav class="toc-nav" id="toc-nav" aria-label="Page sections">
+      <!-- Generated by JavaScript based on page headings -->
+    </nav>
+  </div>
+</aside>
+
+
+<footer class="site-footer">
+  
+
+  <div class="footer-bottom">
+    <p>
+      Generated by <a href="https://ruby.github.io/rdoc/">RDoc 7.1.0</a>
+      using the Aliki theme by <a href="http://st0012.dev">Stan Lo</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+

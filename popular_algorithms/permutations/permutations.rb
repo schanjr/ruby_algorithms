@@ -10,12 +10,12 @@ def generator(nums, left, right, results )
     return results << nums.dup
   else
     (left..right).each do |i|
-      nums[left], nums[i] = nums[i], nums[left]
+      nums[left], nums[i] = nums[i], nums[left] # swap temporarily and push into generator
       generator(nums, left+1, right, results)
-      nums[left], nums[i] = nums[i], nums[left]
+      nums[left], nums[i] = nums[i], nums[left] # swap back to original
     end
   end
 end
 
 
-puts permute([1,2,3]).to_s
+puts permute([1,2,3,]).to_s

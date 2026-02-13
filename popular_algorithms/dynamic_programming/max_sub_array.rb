@@ -2,7 +2,6 @@
 
 # Explanation:
 # 1. We loop through all the numbers eventually. FOr each loop, we keep the current maximum, and the best maximum.
-# 2.
 def max_sub_array(nums)
   best, curr = nums[0], 0
   nums.each do |n|

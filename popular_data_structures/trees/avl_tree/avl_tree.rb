@@ -1,17 +1,22 @@
 # frozen_string_literal: true
 # AVL Tree rotation examples
 # rubocop:disable Layout/CommentIndentation
-class Node
-  attr_accessor :left, :right, :val, :height
 
-  def initialize(val)
-    @left = @right = nil
-    @val = val
-    @height = 1
-  end
-end
+module PopularDataStructures
+  module Trees
+    # Node class for AVL Tree implementation
+    class Node
+      attr_accessor :left, :right, :val, :height
 
-class AVLTree
+      def initialize(val)
+        @left = @right = nil
+        @val = val
+        @height = 1
+      end
+    end
+
+    # AVL Tree implementation with automatic balancing
+  class AVLTree
   attr_reader :root
 
   # Time Complexity:
@@ -241,10 +246,12 @@ class AVLTree
     node
   end
 
+    end
+  end
 end
 
 # Driver program to test above function
-avl = AVLTree.new
+avl = PopularDataStructures::Trees::AVLTree.new
 
 root = avl.insert(10)
 root = avl.insert(20, root)

@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>module PopularAlgorithms::Numbers - Test</title>
+
+
+  <meta
+    name="keywords"
+    content="ruby,module,PopularAlgorithms::Numbers"
+  >
+
+    <meta
+      name="description"
+      content="module PopularAlgorithms::Numbers: Numbers module"
+    >
+
+
+
+
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="module PopularAlgorithms::Numbers - Test">
+
+
+
+    <meta property="og:description" content="Numbers module">
+
+
+
+
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="module PopularAlgorithms::Numbers - Test">
+
+
+
+    <meta name="twitter:description" content="Numbers module">
+
+
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script
+  src="../js/theme-toggle.js?v=7.1.0"
+></script>
+
+<script
+  src="../js/search_navigation.js?v=7.1.0"
+  defer
+></script>
+
+<script
+  src="../js/search_data.js?v=7.1.0"
+  defer
+></script>
+
+<script
+  src="../js/search_ranker.js?v=7.1.0"
+  defer
+></script>
+
+<script
+  src="../js/search_controller.js?v=7.1.0"
+  defer
+></script>
+
+<script
+  src="../js/c_highlighter.js?v=7.1.0"
+  defer
+></script>
+
+<script
+  src="../js/aliki.js?v=7.1.0"
+  defer
+></script>
+
+<link
+  href="../css/rdoc.css?v=7.1.0"
+  rel="stylesheet"
+>
+
+
+
+
+<body role="document" class="module has-toc">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <!-- Chevron (right arrow) - used for expand/collapse -->
+  <symbol
+    id="icon-chevron"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </symbol>
+
+  <!-- File/Document - Pages section -->
+  <symbol
+    id="icon-file"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path
+      d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"
+    ></path>
+
+    <polyline points="14 2 14 8 20 8"></polyline>
+  </symbol>
+
+  <!-- Layers/Stack - Classes and Modules section -->
+  <symbol
+    id="icon-layers"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+    <polyline points="2 17 12 22 22 17"></polyline>
+    <polyline points="2 12 12 17 22 12"></polyline>
+  </symbol>
+
+  <!-- Curly braces with C - Class Methods section -->
+  <symbol
+    id="icon-class-methods"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text
+      x="12"
+      y="17"
+      text-anchor="middle"
+      font-size="13"
+      font-weight="bold"
+      fill="currentColor"
+      stroke="none"
+    >
+      C
+    </text>
+  </symbol>
+
+  <!-- Curly braces with I - Instance Methods section -->
+  <symbol
+    id="icon-instance-methods"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M6 3C3.5 3 2 4.5 2 7v3c0 1.5-1 2-1 2s1 .5 1 2v5c0 2.5 1.5 4 4 4"></path>
+    <path d="M18 3c2.5 0 4 1.5 4 4v3c0 1.5 1 2 1 2s-1 .5-1 2v5c0 2.5-1.5 4-4 4"></path>
+
+    <text
+      x="12"
+      y="17"
+      text-anchor="middle"
+      font-size="13"
+      font-weight="bold"
+      fill="currentColor"
+      stroke="none"
+    >
+      I
+    </text>
+  </symbol>
+
+  <!-- Double chevrons up - Ancestors section -->
+  <symbol
+    id="icon-ancestors"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="17 11 12 6 7 11"></polyline>
+    <polyline points="17 18 12 13 7 18"></polyline>
+  </symbol>
+
+  <!-- User with plus - Included Modules section -->
+  <symbol
+    id="icon-includes"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+
+    <line
+      x1="20"
+      y1="8"
+      x2="20"
+      y2="14"
+    ></line>
+
+    <line
+      x1="23"
+      y1="11"
+      x2="17"
+      y2="11"
+    ></line>
+  </symbol>
+
+  <!-- User with check - Extended Modules section -->
+  <symbol
+    id="icon-extends"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="8.5" cy="7" r="4"></circle>
+    <polyline points="17 11 19 13 23 9"></polyline>
+  </symbol>
+
+  <!-- List - Sections section -->
+  <symbol
+    id="icon-list"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <line
+      x1="8"
+      y1="6"
+      x2="21"
+      y2="6"
+    ></line>
+
+    <line
+      x1="8"
+      y1="12"
+      x2="21"
+      y2="12"
+    ></line>
+
+    <line
+      x1="8"
+      y1="18"
+      x2="21"
+      y2="18"
+    ></line>
+
+    <line
+      x1="3"
+      y1="6"
+      x2="3.01"
+      y2="6"
+    ></line>
+
+    <line
+      x1="3"
+      y1="12"
+      x2="3.01"
+      y2="12"
+    ></line>
+
+    <line
+      x1="3"
+      y1="18"
+      x2="3.01"
+      y2="18"
+    ></line>
+  </symbol>
+</svg>
+
+<header class="top-navbar">
+  <a href="../index.html" class="navbar-brand">
+    Test
+  </a>
+
+  <!-- Desktop search bar -->
+  <div class="navbar-search navbar-search-desktop" role="search">
+    <form action="#" method="get" accept-charset="utf-8">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results-desktop"
+             type="text" name="search" placeholder="Search (/) for a class, method..."
+             spellcheck="false" autocomplete="off"
+             title="Type to search, Up and Down to navigate, Enter to load">
+      <ul id="search-results-desktop" aria-label="Search Results"
+          aria-busy="false" aria-expanded="false"
+          aria-atomic="false" class="initially-hidden search-results"></ul>
+    </form>
+  </div>
+
+  <!-- Mobile search icon button -->
+  <button id="search-toggle" class="navbar-search-mobile" aria-label="Open search" type="button">
+    <span aria-hidden="true">🔍</span>
+  </button>
+
+  <!-- Theme toggle button -->
+  <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" type="button">
+    <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+  </button>
+</header>
+
+<!-- Search Modal (Mobile) -->
+<div id="search-modal" class="search-modal" hidden aria-modal="true" role="dialog" aria-label="Search">
+  <div class="search-modal-backdrop"></div>
+  <div class="search-modal-content">
+    <div class="search-modal-header">
+      <form class="search-modal-form" action="#" method="get" accept-charset="utf-8">
+        <span class="search-modal-icon" aria-hidden="true">🔍</span>
+        <input id="search-field-mobile" role="combobox" aria-label="Search"
+               aria-autocomplete="list" aria-controls="search-results-mobile"
+               type="text" name="search" placeholder="Search documentation"
+               spellcheck="false" autocomplete="off">
+        <button type="button" class="search-modal-close" aria-label="Close search" id="search-modal-close">
+          <span aria-hidden="true">esc</span>
+        </button>
+      </form>
+    </div>
+    <div class="search-modal-body">
+      <ul id="search-results-mobile" aria-label="Search Results"
+          aria-busy="false" aria-expanded="false"
+          aria-atomic="false" class="search-results search-modal-results initially-hidden"></ul>
+      <div class="search-modal-empty">
+        <p>No recent searches</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="navigation-toggle" role="button" tabindex="0" aria-label="Toggle sidebar" aria-expanded="true" aria-controls="navigation">
+  <span aria-hidden="true">&#9776;</span>
+</div>
+
+
+<nav id="navigation" role="navigation" hidden>
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="nav-section">
+    <details class="nav-section-collapsible" open>
+      <summary class="nav-section-header">
+        <span class="nav-section-icon">
+          <svg><use href="#icon-instance-methods"></use></svg>
+        </span>
+        <span class="nav-section-title">Instance Methods</span>
+        <span class="nav-section-chevron">
+          <svg><use href="#icon-chevron"></use></svg>
+        </span>
+      </summary>
+      <ul class="nav-list" role="directory">
+
+        <li ><a href="#method-i-d_to_b_loop">d_to_b_loop</a></li>
+
+        <li ><a href="#method-i-d_to_b_recursion">d_to_b_recursion</a></li>
+
+        <li ><a href="#method-i-int_to_roman">int_to_roman</a></li>
+
+        <li ><a href="#method-i-is_power_of-3F">is_power_of?</a></li>
+
+        <li ><a href="#method-i-is_power_of_two">is_power_of_two</a></li>
+
+        <li ><a href="#method-i-number_to_words">number_to_words</a></li>
+
+        <li ><a href="#method-i-polynomial_prime-3F">polynomial_prime?</a></li>
+
+        <li ><a href="#method-i-proper_fractions">proper_fractions</a></li>
+
+        <li ><a href="#method-i-proper_fractions2">proper_fractions2</a></li>
+
+        <li ><a href="#method-i-roman_to_int">roman_to_int</a></li>
+
+        <li ><a href="#method-i-sieve_of_eratosthenes">sieve_of_eratosthenes</a></li>
+
+        <li ><a href="#method-i-sieves_primes">sieves_primes</a></li>
+
+        <li ><a href="#method-i-subset_sum">subset_sum</a></li>
+
+        <li ><a href="#method-i-sum_natural_num_looping">sum_natural_num_looping</a></li>
+
+        <li ><a href="#method-i-sum_natural_num_recursion">sum_natural_num_recursion</a></li>
+
+        <li ><a href="#method-i-two_sum">two_sum</a></li>
+
+      </ul>
+    </details>
+  </div>
+
+
+  <div id="classindex-section" class="nav-section">
+  <details class="nav-section-collapsible" open>
+    <summary class="nav-section-header">
+      <span class="nav-section-icon">
+        <svg><use href="#icon-layers"></use></svg>
+      </span>
+      <span class="nav-section-title">Classes and Modules</span>
+      <span class="nav-section-chevron">
+        <svg><use href="#icon-chevron"></use></svg>
+      </span>
+    </summary>
+
+    <ul class="link-list nav-list"><li><details><summary><code><a href="../DesignPatterns.html">DesignPatterns</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../DesignPatterns/Behavioral.html">Behavioral</a></code></summary><ul class="link-list nav-list"><li><code><a href="../DesignPatterns/Behavioral/AbstractCoffeeBrewer.html">AbstractCoffeeBrewer</a></code></li><li><code><a href="../DesignPatterns/Behavioral/Add.html">Add</a></code></li><li><code><a href="../DesignPatterns/Behavioral/BubbleSortStrategy.html">BubbleSortStrategy</a></code></li><li><code><a href="../DesignPatterns/Behavioral/CappuccinoCoffeeBrewer.html">CappuccinoCoffeeBrewer</a></code></li><li><code><a href="../DesignPatterns/Behavioral/Chatroom.html">Chatroom</a></code></li><li><code><a href="../DesignPatterns/Behavioral/ChatroomMediator.html">ChatroomMediator</a></code></li><li><code><a href="../DesignPatterns/Behavioral/ConcreteElementA.html">ConcreteElementA</a></code></li><li><code><a href="../DesignPatterns/Behavioral/ConcreteElementB.html">ConcreteElementB</a></code></li><li><code><a href="../DesignPatterns/Behavioral/Context.html">Context</a></code></li><li><code><a href="../DesignPatterns/Behavioral/CustomerService.html">CustomerService</a></code></li><li><code><a href="../DesignPatterns/Behavioral/CustomerServiceRepresentative.html">CustomerServiceRepresentative</a></code></li><li><code><a href="../DesignPatterns/Behavioral/DeliveredOrderState.html">DeliveredOrderState</a></code></li><li><code><a href="../DesignPatterns/Behavioral/Divide.html">Divide</a></code></li><li><code><a href="../DesignPatterns/Behavioral/Element.html">Element</a></code></li><li><code><a href="../DesignPatterns/Behavioral/EspressoCoffeeBrewer.html">EspressoCoffeeBrewer</a></code></li><li><code><a href="../DesignPatterns/Behavioral/Expression.html">Expression</a></code></li><li><code><a href="../DesignPatterns/Behavioral/Iterator.html">Iterator</a></code></li><li><code><a href="../DesignPatterns/Behavioral/LatteCoffeeBrewer.html">LatteCoffeeBrewer</a></code></li><li><code><a href="../DesignPatterns/Behavioral/Library.html">Library</a></code></li><li><code><a href="../DesignPatterns/Behavioral/LibraryIterator.html">LibraryIterator</a></code></li><li><code><a href="../DesignPatterns/Behavioral/Mediator.html">Mediator</a></code></li><li><code><a href="../DesignPatterns/Behavioral/MergeSortStrategy.html">MergeSortStrategy</a></code></li><li><code><a href="../DesignPatterns/Behavioral/Multiply.html">Multiply</a></code></li><li><code><a href="../DesignPatterns/Behavioral/NullCustomerServiceRepresentative.html">NullCustomerServiceRepresentative</a></code></li><li><code><a href="../DesignPatterns/Behavioral/Number.html">Number</a></code></li><li><code><a href="../DesignPatterns/Behavioral/Order.html">Order</a></code></li><li><code><a href="../DesignPatterns/Behavioral/OrderState.html">OrderState</a></code></li><li><code><a href="../DesignPatterns/Behavioral/PendingOrderState.html">PendingOrderState</a></code></li><li><code><a href="../DesignPatterns/Behavioral/ProcessingOrderState.html">ProcessingOrderState</a></code></li><li><code><a href="../DesignPatterns/Behavioral/QuickSortStrategy.html">QuickSortStrategy</a></code></li><li><code><a href="../DesignPatterns/Behavioral/ShippedOrderState.html">ShippedOrderState</a></code></li><li><code><a href="../DesignPatterns/Behavioral/Sorter.html">Sorter</a></code></li><li><code><a href="../DesignPatterns/Behavioral/SortingStrategy.html">SortingStrategy</a></code></li><li><code><a href="../DesignPatterns/Behavioral/Subtract.html">Subtract</a></code></li><li><code><a href="../DesignPatterns/Behavioral/TextEditor.html">TextEditor</a></code></li><li><code><a href="../DesignPatterns/Behavioral/TextEditorMemento.html">TextEditorMemento</a></code></li><li><code><a href="../DesignPatterns/Behavioral/User.html">User</a></code></li><li><code><a href="../DesignPatterns/Behavioral/UserObserver.html">UserObserver</a></code></li><li><code><a href="../DesignPatterns/Behavioral/Visitor.html">Visitor</a></code></li></ul></details></li><li><details><summary><code><a href="../DesignPatterns/Creational.html">Creational</a></code></summary><ul class="link-list nav-list"><li><code><a href="../DesignPatterns/Creational/AbstractCarFactory.html">AbstractCarFactory</a></code></li><li><code><a href="../DesignPatterns/Creational/Animal.html">Animal</a></code></li><li><code><a href="../DesignPatterns/Creational/Assembler.html">Assembler</a></code></li><li><code><a href="../DesignPatterns/Creational/BankAccount.html">BankAccount</a></code></li><li><code><a href="../DesignPatterns/Creational/Bird.html">Bird</a></code></li><li><code><a href="../DesignPatterns/Creational/Builder.html">Builder</a></code></li><li><code><a href="../DesignPatterns/Creational/Cat.html">Cat</a></code></li><li><code><a href="../DesignPatterns/Creational/CatStore.html">CatStore</a></code></li><li><code><a href="../DesignPatterns/Creational/Command.html">Command</a></code></li><li><code><a href="../DesignPatterns/Creational/ComplaintHandler.html">ComplaintHandler</a></code></li><li><code><a href="../DesignPatterns/Creational/ConcreteBuilder1.html">ConcreteBuilder1</a></code></li><li><code><a href="../DesignPatterns/Creational/ConcreteBuilder2.html">ConcreteBuilder2</a></code></li><li><code><a href="../DesignPatterns/Creational/CustomerServiceRepresentative.html">CustomerServiceRepresentative</a></code></li><li><code><a href="../DesignPatterns/Creational/DatabaseConnection.html">DatabaseConnection</a></code></li><li><code><a href="../DesignPatterns/Creational/DatabaseConnectionPool.html">DatabaseConnectionPool</a></code></li><li><code><a href="../DesignPatterns/Creational/Director.html">Director</a></code></li><li><code><a href="../DesignPatterns/Creational/Dog.html">Dog</a></code></li><li><code><a href="../DesignPatterns/Creational/DogStore.html">DogStore</a></code></li><li><code><a href="../DesignPatterns/Creational/Employee.html">Employee</a></code></li><li><code><a href="../DesignPatterns/Creational/Fish.html">Fish</a></code></li><li><code><a href="../DesignPatterns/Creational/FishStore.html">FishStore</a></code></li><li><code><a href="../DesignPatterns/Creational/HatchbackAssembler.html">HatchbackAssembler</a></code></li><li><code><a href="../DesignPatterns/Creational/Manager.html">Manager</a></code></li><li><code><a href="../DesignPatterns/Creational/MoveBackwardCommand.html">MoveBackwardCommand</a></code></li><li><code><a href="../DesignPatterns/Creational/MoveForwardCommand.html">MoveForwardCommand</a></code></li><li><code><a href="../DesignPatterns/Creational/PetStore.html">PetStore</a></code></li><li><code><a href="../DesignPatterns/Creational/Product.html">Product</a></code></li><li><code><a href="../DesignPatterns/Creational/RemoteControl.html">RemoteControl</a></code></li><li><code><a href="../DesignPatterns/Creational/SUVAssembler.html">SUVAssembler</a></code></li><li><code><a href="../DesignPatterns/Creational/SedanAssembler.html">SedanAssembler</a></code></li><li><code><a href="../DesignPatterns/Creational/TeamLeader.html">TeamLeader</a></code></li><li><code><a href="../DesignPatterns/Creational/ToyCar.html">ToyCar</a></code></li><li><code><a href="../DesignPatterns/Creational/TurnLeftCommand.html">TurnLeftCommand</a></code></li><li><code><a href="../DesignPatterns/Creational/TurnRightCommand.html">TurnRightCommand</a></code></li></ul></details></li><li><details><summary><code><a href="../DesignPatterns/Structural.html">Structural</a></code></summary><ul class="link-list nav-list"><li><code><a href="../DesignPatterns/Structural/AIFFAudioFile.html">AIFFAudioFile</a></code></li><li><code><a href="../DesignPatterns/Structural/Adaptee.html">Adaptee</a></code></li><li><code><a href="../DesignPatterns/Structural/Adapter.html">Adapter</a></code></li><li><code><a href="../DesignPatterns/Structural/AudioFile.html">AudioFile</a></code></li><li><code><a href="../DesignPatterns/Structural/AudioPlayer.html">AudioPlayer</a></code></li><li><code><a href="../DesignPatterns/Structural/Character.html">Character</a></code></li><li><code><a href="../DesignPatterns/Structural/CharacterFactory.html">CharacterFactory</a></code></li><li><code><a href="../DesignPatterns/Structural/ChocolateDecorator.html">ChocolateDecorator</a></code></li><li><code><a href="../DesignPatterns/Structural/Coffee.html">Coffee</a></code></li><li><code><a href="../DesignPatterns/Structural/CoffeeDecorator.html">CoffeeDecorator</a></code></li><li><code><a href="../DesignPatterns/Structural/Employee.html">Employee</a></code></li><li><code><a href="../DesignPatterns/Structural/EmployeeGroup.html">EmployeeGroup</a></code></li><li><code><a href="../DesignPatterns/Structural/MP3AudioFile.html">MP3AudioFile</a></code></li><li><code><a href="../DesignPatterns/Structural/Menu.html">Menu</a></code></li><li><code><a href="../DesignPatterns/Structural/MilkDecorator.html">MilkDecorator</a></code></li><li><code><a href="../DesignPatterns/Structural/OrderFacade.html">OrderFacade</a></code></li><li><code><a href="../DesignPatterns/Structural/RemoteFileSystem.html">RemoteFileSystem</a></code></li><li><code><a href="../DesignPatterns/Structural/RemoteFileSystemProxy.html">RemoteFileSystemProxy</a></code></li><li><code><a href="../DesignPatterns/Structural/SalaryPolicy.html">SalaryPolicy</a></code></li><li><code><a href="../DesignPatterns/Structural/SugarDecorator.html">SugarDecorator</a></code></li><li><code><a href="../DesignPatterns/Structural/Target.html">Target</a></code></li><li><code><a href="../DesignPatterns/Structural/WAVAudioFile.html">WAVAudioFile</a></code></li></ul></details></li></ul></details></li><li><details><summary><code><a href="../MixedDataStructures.html">MixedDataStructures</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../MixedDataStructures/Cache.html">Cache</a></code></summary><ul class="link-list nav-list"><li><code><a href="../MixedDataStructures/Cache/LRUCache.html">LRUCache</a></code></li><li><code><a href="../MixedDataStructures/Cache/ListNode.html">ListNode</a></code></li></ul></details></li></ul></details></li><li><details><summary><code><a href="../PopularAlgorithms.html">PopularAlgorithms</a></code></summary><ul class="link-list nav-list"><li><code><a href="../PopularAlgorithms/Arrays.html">Arrays</a></code></li><li><code><a href="../PopularAlgorithms/Backtracking.html">Backtracking</a></code></li><li><details><summary><code><a href="../PopularAlgorithms/Dag.html">Dag</a></code></summary><ul class="link-list nav-list"><li><code><a href="../PopularAlgorithms/Dag/City.html">City</a></code></li></ul></details></li><li><details><summary><code><a href="../PopularAlgorithms/DynamicProgramming.html">DynamicProgramming</a></code></summary><ul class="link-list nav-list"><li><code><a href="../PopularAlgorithms/DynamicProgramming/MinimumDifficultyOfAJobSchedule.html">MinimumDifficultyOfAJobSchedule</a></code></li></ul></details></li><li><code><a href="../PopularAlgorithms/Graph.html">Graph</a></code></li><li><details><summary><code><a href="../PopularAlgorithms/LinkedList.html">LinkedList</a></code></summary><ul class="link-list nav-list"><li><code><a href="../PopularAlgorithms/LinkedList/ListNode.html">ListNode</a></code></li></ul></details></li><li><code><a href="../PopularAlgorithms/Matrix.html">Matrix</a></code></li><li><code><a href="../PopularAlgorithms/Numbers.html">Numbers</a></code></li><li><code><a href="../PopularAlgorithms/Permutations.html">Permutations</a></code></li><li><details><summary><code><a href="../PopularAlgorithms/PopularAlgorithms.html">PopularAlgorithms</a></code></summary><ul class="link-list nav-list"><li><code><a href="../PopularAlgorithms/PopularAlgorithms/DynamicProgramming.html">DynamicProgramming</a></code></li></ul></details></li><li><code><a href="../PopularAlgorithms/Sampling.html">Sampling</a></code></li><li><code><a href="../PopularAlgorithms/Sorting.html">Sorting</a></code></li><li><code><a href="../PopularAlgorithms/Strings.html">Strings</a></code></li><li><code><a href="../PopularAlgorithms/Trees.html">Trees</a></code></li></ul></details></li><li><details><summary><code><a href="../PopularDataStructures.html">PopularDataStructures</a></code></summary><ul class="link-list nav-list"><li><code><a href="../PopularDataStructures/DoublyLinkedList.html">DoublyLinkedList</a></code></li><li><details><summary><code><a href="../PopularDataStructures/HashTable.html">HashTable</a></code></summary><ul class="link-list nav-list"><li><code><a href="../PopularDataStructures/HashTable/LinkedList.html">LinkedList</a></code></li><li><code><a href="../PopularDataStructures/HashTable/Node.html">Node</a></code></li><li><code><a href="../PopularDataStructures/HashTable/SeparateChaining.html">SeparateChaining</a></code></li><li><code><a href="../PopularDataStructures/HashTable/UniversalHash.html">UniversalHash</a></code></li></ul></details></li><li><code><a href="../PopularDataStructures/LinkedList.html">LinkedList</a></code></li><li><code><a href="../PopularDataStructures/MinHeap.html">MinHeap</a></code></li><li><code><a href="../PopularDataStructures/Node.html">Node</a></code></li><li><details><summary><code><a href="../PopularDataStructures/Probabilistic.html">Probabilistic</a></code></summary><ul class="link-list nav-list"><li><details><summary><code><a href="../PopularDataStructures/Probabilistic/DSkipList.html">DSkipList</a></code></summary><ul class="link-list nav-list"><li><code><a href="../PopularDataStructures/Probabilistic/DSkipList/Node.html">Node</a></code></li></ul></details></li></ul></details></li><li><details><summary><code><a href="../PopularDataStructures/Queues.html">Queues</a></code></summary><ul class="link-list nav-list"><li><code><a href="../PopularDataStructures/Queues/DynamicCircularBuffer.html">DynamicCircularBuffer</a></code></li></ul></details></li><li><details><summary><code><a href="../PopularDataStructures/Stacks.html">Stacks</a></code></summary><ul class="link-list nav-list"><li><code><a href="../PopularDataStructures/Stacks/SortableStacks.html">SortableStacks</a></code></li><li><code><a href="../PopularDataStructures/Stacks/Stacks.html">Stacks</a></code></li></ul></details></li><li><details><summary><code><a href="../PopularDataStructures/Trees.html">Trees</a></code></summary><ul class="link-list nav-list"><li><code><a href="../PopularDataStructures/Trees/Trie.html">Trie</a></code></li></ul></details></li></ul></details></li><li><code><a href="../Snippets.html">Snippets</a></code></li><li><details><summary><code><a href="../SupportTools.html">SupportTools</a></code></summary><ul class="link-list nav-list"><li><code><a href="../SupportTools/EasyBenchmark.html">EasyBenchmark</a></code></li></ul></details></li><li><details><summary><code><a href="../Tcp.html">Tcp</a></code></summary><ul class="link-list nav-list"><li><code><a href="../Tcp/ChatroomClient.html">ChatroomClient</a></code></li><li><code><a href="../Tcp/ChatroomServer.html">ChatroomServer</a></code></li></ul></details></li></ul>
+  </details>
+</div>
+
+</nav>
+
+<main role="main" aria-labelledby="module-popularalgorithms-numbers">
+  
+  
+    <ol role="navigation" aria-label="Breadcrumb navigation" class="breadcrumb">
+      
+      <li>
+        
+        <a href="../PopularAlgorithms.html">PopularAlgorithms</a><span>::</span>
+        
+      </li>
+      
+      <li>
+        
+        <span>Numbers</span>
+        
+      </li>
+      
+    </ol>
+  
+
+  <span id="module-PopularAlgorithms::Numbers" class="legacy-anchor"></span>
+  <h1 id="module-popularalgorithms-numbers" class="anchor-link module">
+    module PopularAlgorithms::Numbers
+  </h1>
+
+  <section class="description">
+    
+<p><a href="Numbers.html"><code>Numbers</code></a> module</p>
+
+  </section>
+
+
+  <span id="5Buntitled-5D" class="legacy-anchor"></span>
+  <section id="untitled" class="documentation-section anchor-link">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     <section id="public-instance-untitled-method-details" class="method-section anchor-link">
+       <header>
+         <h3 id="public-instance-methods"><a href="#public-instance-methods">Public Instance Methods</a></h3>
+       </header>
+
+
+      <div id="method-i-d_to_b_loop" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-d_to_b_loop" title="Link to this method">
+                <span class="method-name">d_to_b_loop</span>
+                <span class="method-args">(number)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="d_to_b_loop-source">
+            <pre class="ruby">     <span class="ruby-comment"># File doc_wrappers/comprehensive_namespaces.rb</span>
+<span class="line-num">4974</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">d_to_b_loop</span>(<span class="ruby-identifier">number</span>)
+<span class="line-num">4975</span>   <span class="ruby-identifier">str</span> = <span class="ruby-string">&quot;&quot;</span>
+<span class="line-num">4976</span>   <span class="ruby-keyword">while</span> <span class="ruby-identifier">number</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+<span class="line-num">4977</span>     <span class="ruby-identifier">str</span> = <span class="ruby-node">&quot;#{number % 2}&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">str</span>
+<span class="line-num">4978</span>     <span class="ruby-identifier">number</span> = <span class="ruby-identifier">number</span> <span class="ruby-operator">/</span> <span class="ruby-value">2</span>
+<span class="line-num">4979</span>   <span class="ruby-keyword">end</span>
+<span class="line-num">4980</span>   <span class="ruby-keyword">return</span> <span class="ruby-identifier">str</span>
+<span class="line-num">4981</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-d_to_b_recursion" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-d_to_b_recursion" title="Link to this method">
+                <span class="method-name">d_to_b_recursion</span>
+                <span class="method-args">(number, str = &#39;&#39;)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="d_to_b_recursion-source">
+            <pre class="ruby">     <span class="ruby-comment"># File doc_wrappers/comprehensive_namespaces.rb</span>
+<span class="line-num">4965</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">d_to_b_recursion</span>(<span class="ruby-identifier">number</span>, <span class="ruby-identifier">str</span> = <span class="ruby-string">&#39;&#39;</span>)
+<span class="line-num">4966</span>   <span class="ruby-keyword">if</span> <span class="ruby-identifier">number</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+<span class="line-num">4967</span>     <span class="ruby-keyword">return</span> <span class="ruby-identifier">str</span>
+<span class="line-num">4968</span>   <span class="ruby-keyword">end</span>
+<span class="line-num">4969</span>   <span class="ruby-identifier">new_num</span> = <span class="ruby-identifier">number</span> <span class="ruby-operator">/</span> <span class="ruby-value">2</span>
+<span class="line-num">4970</span>   <span class="ruby-identifier">str</span> = <span class="ruby-node">&quot;#{number % 2}&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">str</span>
+<span class="line-num">4971</span>   <span class="ruby-identifier">d_to_b_recursion</span>(<span class="ruby-identifier">new_num</span>, <span class="ruby-identifier">str</span>)
+<span class="line-num">4972</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>Never knew you can create binaries like this. Anyone know what is the thinking behind?</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-int_to_roman" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-int_to_roman" title="Link to this method">
+                <span class="method-name">int_to_roman</span>
+                <span class="method-args">(num)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="int_to_roman-source">
+            <pre class="ruby">     <span class="ruby-comment"># File doc_wrappers/comprehensive_namespaces.rb</span>
+<span class="line-num">5072</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">int_to_roman</span>(<span class="ruby-identifier">num</span>)
+<span class="line-num">5073</span>   <span class="ruby-identifier">map</span> = { <span class="ruby-value">1000</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;M&quot;</span>,
+<span class="line-num">5074</span>           <span class="ruby-value">900</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;CM&quot;</span>,
+<span class="line-num">5075</span>           <span class="ruby-value">500</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;D&quot;</span>,
+<span class="line-num">5076</span>           <span class="ruby-value">400</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;CD&quot;</span>,
+<span class="line-num">5077</span>           <span class="ruby-value">100</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;C&quot;</span>,
+<span class="line-num">5078</span>           <span class="ruby-value">90</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;XC&quot;</span>,
+<span class="line-num">5079</span>           <span class="ruby-value">50</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;L&quot;</span>,
+<span class="line-num">5080</span>           <span class="ruby-value">40</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;XL&quot;</span>,
+<span class="line-num">5081</span>           <span class="ruby-value">10</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;X&quot;</span>,
+<span class="line-num">5082</span>           <span class="ruby-value">9</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;IX&quot;</span>,
+<span class="line-num">5083</span>           <span class="ruby-value">5</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;V&quot;</span>,
+<span class="line-num">5084</span>           <span class="ruby-value">4</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;IV&quot;</span>,
+<span class="line-num">5085</span>           <span class="ruby-value">1</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;I&quot;</span>
+<span class="line-num">5086</span>   }
+<span class="line-num">5087</span>   <span class="ruby-identifier">roman</span> = <span class="ruby-string">&quot;&quot;</span>
+<span class="line-num">5088</span>   <span class="ruby-identifier">map</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">number</span>, <span class="ruby-identifier">letter</span><span class="ruby-operator">|</span>
+<span class="line-num">5089</span>     <span class="ruby-keyword">while</span> <span class="ruby-identifier">num</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">number</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+<span class="line-num">5090</span>       <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Current num: #{num}&quot;</span>
+<span class="line-num">5091</span>       <span class="ruby-identifier">roman</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">letter</span>
+<span class="line-num">5092</span>       <span class="ruby-identifier">num</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">number</span>
+<span class="line-num">5093</span>     <span class="ruby-keyword">end</span>
+<span class="line-num">5094</span>   <span class="ruby-keyword">end</span>
+<span class="line-num">5095</span>   <span class="ruby-identifier">roman</span>
+<span class="line-num">5096</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p><a href="https://leetcode.com/problems/integer-to-roman">leetcode.com/problems/integer-to-roman</a>/</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-is_power_of-3F" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-is_power_of-3F" title="Link to this method">
+                <span class="method-name">is_power_of?</span>
+                <span class="method-args">(base_number, n)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="is_power_of-3F-source">
+            <pre class="ruby">     <span class="ruby-comment"># File doc_wrappers/comprehensive_namespaces.rb</span>
+<span class="line-num">5237</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">is_power_of?</span>(<span class="ruby-identifier">base_number</span>, <span class="ruby-identifier">n</span>)
+<span class="line-num">5238</span>   <span class="ruby-identifier">max_int</span> = ((<span class="ruby-value">2</span> <span class="ruby-operator">**</span> <span class="ruby-value">32</span>) <span class="ruby-operator">/</span> <span class="ruby-value">2</span>) <span class="ruby-operator">-</span> <span class="ruby-value">1</span>
+<span class="line-num">5239</span>   <span class="ruby-identifier">max_power</span> = <span class="ruby-identifier">base_number</span> <span class="ruby-operator">**</span> <span class="ruby-constant">Math</span>.<span class="ruby-identifier">log</span>(<span class="ruby-identifier">max_int</span>, <span class="ruby-identifier">base_number</span>).<span class="ruby-identifier">floor</span>
+<span class="line-num">5240</span>   <span class="ruby-identifier">n</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">max_power</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+<span class="line-num">5241</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p><a href="https://leetcode.com/problems/power-of-three/solution">leetcode.com/problems/power-of-three/solution</a>/ An important piece of information can be deduced from the function signature In particular, n is of type int. In Java, this means it is a 4 byte, signed integer [ref]. The maximum value of this data type is 2147483647. Three ways of calculating this value are</p>
+<ul><li>
+<p>Google</p>
+</li><li>
+<p>System.out.println(Integer.MAX_VALUE);</p>
+</li><li>
+<p>max_int = ((2 ** 32) / 2) - 1   – since 32 bit is used to represent an integer, half of the range is used to represent negative numbers, and zero is also used</p>
+</li></ul>
+
+<p>Knowing the limitation of n, we can now deduce that the maximum value of n that is also a power of three is 1162261467. We calculate this as:</p>
+<ul><li>
+<p>log3(max_int) = 19.56..</p>
+</li><li>
+<p>rounded down to whole number 19. The biggest whole number that can be stored for base 3: 3 ^ 19</p>
+</li><li>
+<p>3 ^ 19 == 1162261467</p>
+</li></ul>
+
+<p>Therefore, the possible values of n where we should return true are 3^1, 3^2, 3^3… Since 3 is a prime number, the only divisors of 3^19 are 3^0, 3^1, 3^3. therefore all we need to do is divide 3^(19) by n A remainder of 0 means n is a divisor of 3^19 and therefore a power of three.</p>
+
+<p>Complexity Analysis</p>
+
+<p>Time complexity : O(1)O(1). We are only doing one operation. (if we figure out the max_power before hand) Space complexity : O(1)O(1). We are not using any additional memory.</p>
+
+<p>This method only works for PRIME NUMBERS.</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-is_power_of_two" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-is_power_of_two" title="Link to this method">
+                <span class="method-name">is_power_of_two</span>
+                <span class="method-args">(n)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="is_power_of_two-source">
+            <pre class="ruby">     <span class="ruby-comment"># File doc_wrappers/comprehensive_namespaces.rb</span>
+<span class="line-num">5247</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">is_power_of_two</span>(<span class="ruby-identifier">n</span>)
+<span class="line-num">5248</span>   <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+<span class="line-num">5249</span>   <span class="ruby-identifier">n</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">n</span> <span class="ruby-operator">&amp;</span> (<span class="ruby-identifier">n</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>)) <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+<span class="line-num">5250</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p><a href="https://leetcode.com/problems/power-of-two/?envType=daily-question&amp;envId=2024-02-19">leetcode.com/problems/power-of-two/?envType=daily-question&amp;envId=2024-02-19</a></p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-number_to_words" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-number_to_words" title="Link to this method">
+                <span class="method-name">number_to_words</span>
+                <span class="method-args">(num)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="number_to_words-source">
+            <pre class="ruby">     <span class="ruby-comment"># File doc_wrappers/comprehensive_namespaces.rb</span>
+<span class="line-num">5110</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">number_to_words</span>(<span class="ruby-identifier">num</span>)
+<span class="line-num">5111</span>   <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;Zero&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">num</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+<span class="line-num">5112</span>   <span class="ruby-identifier">size</span> = {
+<span class="line-num">5113</span>     <span class="ruby-value">4</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Billion&quot;</span>,
+<span class="line-num">5114</span>     <span class="ruby-value">3</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Million&quot;</span>,
+<span class="line-num">5115</span>     <span class="ruby-value">2</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Thousand&quot;</span>
+<span class="line-num">5116</span>   }
+<span class="line-num">5117</span>   <span class="ruby-identifier">edge_case_tenth_size</span> = {
+<span class="line-num">5118</span>     <span class="ruby-string">&quot;10&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Ten&quot;</span>,
+<span class="line-num">5119</span>     <span class="ruby-string">&quot;11&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Eleven&quot;</span>,
+<span class="line-num">5120</span>     <span class="ruby-string">&quot;12&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Twelve&quot;</span>,
+<span class="line-num">5121</span>     <span class="ruby-string">&quot;13&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Thirteen&quot;</span>,
+<span class="line-num">5122</span>     <span class="ruby-string">&quot;14&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Fourteen&quot;</span>,
+<span class="line-num">5123</span>     <span class="ruby-string">&quot;15&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Fifteen&quot;</span>,
+<span class="line-num">5124</span>     <span class="ruby-string">&quot;16&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Sixteen&quot;</span>,
+<span class="line-num">5125</span>     <span class="ruby-string">&quot;17&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Seventeen&quot;</span>,
+<span class="line-num">5126</span>     <span class="ruby-string">&quot;18&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Eighteen&quot;</span>,
+<span class="line-num">5127</span>     <span class="ruby-string">&quot;19&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Nineteen&quot;</span>
+<span class="line-num">5128</span>   }
+<span class="line-num">5129</span>   <span class="ruby-identifier">tenth_size</span> = {
+<span class="line-num">5130</span>     <span class="ruby-string">&quot;2&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Twenty&quot;</span>,
+<span class="line-num">5131</span>     <span class="ruby-string">&quot;3&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Thirty&quot;</span>,
+<span class="line-num">5132</span>     <span class="ruby-string">&quot;4&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Forty&quot;</span>,
+<span class="line-num">5133</span>     <span class="ruby-string">&quot;5&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Fifty&quot;</span>,
+<span class="line-num">5134</span>     <span class="ruby-string">&quot;6&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Sixty&quot;</span>,
+<span class="line-num">5135</span>     <span class="ruby-string">&quot;7&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Seventy&quot;</span>,
+<span class="line-num">5136</span>     <span class="ruby-string">&quot;8&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Eighty&quot;</span>,
+<span class="line-num">5137</span>     <span class="ruby-string">&quot;9&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Ninety&quot;</span>
+<span class="line-num">5138</span>   }
+<span class="line-num">5139</span>   <span class="ruby-identifier">one_size</span> = {
+<span class="line-num">5140</span>     <span class="ruby-string">&quot;1&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;One&quot;</span>,
+<span class="line-num">5141</span>     <span class="ruby-string">&quot;2&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Two&quot;</span>,
+<span class="line-num">5142</span>     <span class="ruby-string">&quot;3&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Three&quot;</span>,
+<span class="line-num">5143</span>     <span class="ruby-string">&quot;4&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Four&quot;</span>,
+<span class="line-num">5144</span>     <span class="ruby-string">&quot;5&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Five&quot;</span>,
+<span class="line-num">5145</span>     <span class="ruby-string">&quot;6&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Six&quot;</span>,
+<span class="line-num">5146</span>     <span class="ruby-string">&quot;7&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Seven&quot;</span>,
+<span class="line-num">5147</span>     <span class="ruby-string">&quot;8&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Eight&quot;</span>,
+<span class="line-num">5148</span>     <span class="ruby-string">&quot;9&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Nine&quot;</span>
+<span class="line-num">5149</span>   }
+<span class="line-num">5150</span> 
+<span class="line-num">5151</span>   <span class="ruby-identifier">to_ar</span> = <span class="ruby-identifier">num</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">chars</span>
+<span class="line-num">5152</span>   <span class="ruby-identifier">grouped</span> = []
+<span class="line-num">5153</span> 
+<span class="line-num">5154</span>   <span class="ruby-keyword">until</span> <span class="ruby-identifier">to_ar</span>.<span class="ruby-identifier">empty?</span>
+<span class="line-num">5155</span>     <span class="ruby-keyword">if</span> <span class="ruby-identifier">to_ar</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">3</span>
+<span class="line-num">5156</span>       <span class="ruby-identifier">grouped</span>.<span class="ruby-identifier">insert</span>(<span class="ruby-value">0</span>, <span class="ruby-identifier">to_ar</span>.<span class="ruby-identifier">slice!</span>(<span class="ruby-value">-3</span>, <span class="ruby-value">3</span>))
+<span class="line-num">5157</span>     <span class="ruby-keyword">else</span>
+<span class="line-num">5158</span>       <span class="ruby-identifier">grouped</span>.<span class="ruby-identifier">insert</span>(<span class="ruby-value">0</span>, <span class="ruby-identifier">to_ar</span>.<span class="ruby-identifier">slice!</span>(<span class="ruby-value">0</span>, <span class="ruby-value">3</span>))
+<span class="line-num">5159</span>     <span class="ruby-keyword">end</span>
+<span class="line-num">5160</span>   <span class="ruby-keyword">end</span>
+<span class="line-num">5161</span>   <span class="ruby-identifier">translated</span> = <span class="ruby-string">&quot;&quot;</span>
+<span class="line-num">5162</span>   <span class="ruby-identifier">index</span> = <span class="ruby-value">0</span>
+<span class="line-num">5163</span>   <span class="ruby-keyword">until</span> <span class="ruby-identifier">index</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">grouped</span>.<span class="ruby-identifier">size</span> <span class="ruby-keyword">do</span>
+<span class="line-num">5164</span>     <span class="ruby-identifier">curr</span> = <span class="ruby-identifier">grouped</span>[<span class="ruby-identifier">index</span>]
+<span class="line-num">5165</span>     <span class="ruby-identifier">all_zeroes</span> = <span class="ruby-keyword">true</span>
+<span class="line-num">5166</span> 
+<span class="line-num">5167</span>     <span class="ruby-keyword">if</span> <span class="ruby-identifier">curr</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">3</span>
+<span class="line-num">5168</span>       <span class="ruby-keyword">unless</span> <span class="ruby-identifier">curr</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;0&quot;</span>
+<span class="line-num">5169</span>         <span class="ruby-identifier">translated</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;#{one_size[curr[0]]}&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot; Hundred &quot;</span>
+<span class="line-num">5170</span>         <span class="ruby-identifier">all_zeroes</span> = <span class="ruby-keyword">false</span>
+<span class="line-num">5171</span>       <span class="ruby-keyword">end</span>
+<span class="line-num">5172</span>       <span class="ruby-identifier">curr</span>.<span class="ruby-identifier">shift</span>
+<span class="line-num">5173</span>     <span class="ruby-keyword">end</span>
+<span class="line-num">5174</span> 
+<span class="line-num">5175</span>     <span class="ruby-keyword">if</span> <span class="ruby-identifier">curr</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">2</span>
+<span class="line-num">5176</span>       <span class="ruby-keyword">unless</span> <span class="ruby-identifier">curr</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;0&quot;</span>
+<span class="line-num">5177</span>         <span class="ruby-keyword">if</span> <span class="ruby-identifier">curr</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;1&quot;</span>
+<span class="line-num">5178</span>           <span class="ruby-identifier">translated</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;#{edge_case_tenth_size[curr[0, 2].join]} &quot;</span>
+<span class="line-num">5179</span>           <span class="ruby-identifier">curr</span>.<span class="ruby-identifier">shift</span> <span class="ruby-comment"># shift twice</span>
+<span class="line-num">5180</span>         <span class="ruby-keyword">else</span>
+<span class="line-num">5181</span>           <span class="ruby-identifier">translated</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;#{tenth_size[curr[0]]} &quot;</span>
+<span class="line-num">5182</span>         <span class="ruby-keyword">end</span>
+<span class="line-num">5183</span>         <span class="ruby-identifier">all_zeroes</span> = <span class="ruby-keyword">false</span>
+<span class="line-num">5184</span>       <span class="ruby-keyword">end</span>
+<span class="line-num">5185</span>       <span class="ruby-identifier">curr</span>.<span class="ruby-identifier">shift</span>
+<span class="line-num">5186</span>     <span class="ruby-keyword">end</span>
+<span class="line-num">5187</span> 
+<span class="line-num">5188</span>     <span class="ruby-keyword">if</span> <span class="ruby-identifier">curr</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+<span class="line-num">5189</span>       <span class="ruby-keyword">unless</span> <span class="ruby-identifier">curr</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;0&quot;</span>
+<span class="line-num">5190</span>         <span class="ruby-identifier">translated</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;#{one_size[curr[0]]} &quot;</span>
+<span class="line-num">5191</span>         <span class="ruby-identifier">all_zeroes</span> = <span class="ruby-keyword">false</span>
+<span class="line-num">5192</span>       <span class="ruby-keyword">end</span>
+<span class="line-num">5193</span>       <span class="ruby-identifier">curr</span>.<span class="ruby-identifier">shift</span>
+<span class="line-num">5194</span>     <span class="ruby-keyword">end</span>
+<span class="line-num">5195</span> 
+<span class="line-num">5196</span>     <span class="ruby-keyword">if</span> <span class="ruby-identifier">all_zeroes</span>
+<span class="line-num">5197</span>       <span class="ruby-identifier">index</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+<span class="line-num">5198</span>       <span class="ruby-keyword">next</span>
+<span class="line-num">5199</span>     <span class="ruby-keyword">end</span>
+<span class="line-num">5200</span> 
+<span class="line-num">5201</span>     <span class="ruby-identifier">current_place</span> = <span class="ruby-identifier">grouped</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">index</span>
+<span class="line-num">5202</span> 
+<span class="line-num">5203</span>     <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_place</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
+<span class="line-num">5204</span>       <span class="ruby-identifier">translated</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;#{size[current_place]} &quot;</span>
+<span class="line-num">5205</span>     <span class="ruby-keyword">end</span>
+<span class="line-num">5206</span> 
+<span class="line-num">5207</span>     <span class="ruby-identifier">index</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+<span class="line-num">5208</span>   <span class="ruby-keyword">end</span>
+<span class="line-num">5209</span>   <span class="ruby-identifier">translated</span>.<span class="ruby-identifier">rstrip</span>
+<span class="line-num">5210</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p><a href="https://leetcode.com/explore/interview/card/facebook/5/array-and-strings/273">leetcode.com/explore/interview/card/facebook/5/array-and-strings/273</a>/</p>
+
+<p>232,006,987</p>
+<ol><li>
+<p>The current three digits place. Ex: Two hundred thirty two</p>
+</li><li>
+<p>Its relative place in the number, Ex: million</p>
+</li><li>
+<p>Move to next three numbers if not zero. Repeat Step one. Ex: Six thousand</p>
+</li></ol>
+
+<p>@param {Integer} num @return {String}</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-polynomial_prime-3F" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-polynomial_prime-3F" title="Link to this method">
+                <span class="method-name">polynomial_prime?</span>
+                <span class="method-args">(n)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="polynomial_prime-3F-source">
+            <pre class="ruby">     <span class="ruby-comment"># File doc_wrappers/comprehensive_namespaces.rb</span>
+<span class="line-num">5265</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">polynomial_prime?</span>(<span class="ruby-identifier">n</span>)
+<span class="line-num">5266</span>   <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">1</span>
+<span class="line-num">5267</span>   <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">3</span>
+<span class="line-num">5268</span>   <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> ((<span class="ruby-identifier">n</span> <span class="ruby-operator">%</span> <span class="ruby-value">2</span>) <span class="ruby-operator">==</span> <span class="ruby-value">0</span>) <span class="ruby-operator">||</span> ((<span class="ruby-identifier">n</span> <span class="ruby-operator">%</span> <span class="ruby-value">3</span>) <span class="ruby-operator">==</span> <span class="ruby-value">0</span>)
+<span class="line-num">5269</span>   <span class="ruby-identifier">i</span> = <span class="ruby-value">5</span>
+<span class="line-num">5270</span>   <span class="ruby-comment"># check division on 6k+i polinom</span>
+<span class="line-num">5271</span>   <span class="ruby-comment"># cause all primes are of the form 6k ± 1, with the exception of 2 and 3.</span>
+<span class="line-num">5272</span>   <span class="ruby-keyword">while</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">n</span>
+<span class="line-num">5273</span>     <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">%</span> (<span class="ruby-identifier">i</span> <span class="ruby-operator">+</span> <span class="ruby-value">2</span>) <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+<span class="line-num">5274</span>     <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">6</span>
+<span class="line-num">5275</span>   <span class="ruby-keyword">end</span>
+<span class="line-num">5276</span>   <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+<span class="line-num">5277</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>require_relative ‘./support_tools/easy_benchmark’ one of the fastest prime or not algorithms. Time complexity: log base 6(n)?</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-proper_fractions" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-proper_fractions" title="Link to this method">
+                <span class="method-name">proper_fractions</span>
+                <span class="method-args">(n)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="proper_fractions-source">
+            <pre class="ruby">     <span class="ruby-comment"># File doc_wrappers/comprehensive_namespaces.rb</span>
+<span class="line-num">5019</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">proper_fractions</span>(<span class="ruby-identifier">n</span>)
+<span class="line-num">5020</span>   <span class="ruby-identifier">distinct_prime_factors</span> = <span class="ruby-constant">Set</span>.<span class="ruby-identifier">new</span>() <span class="ruby-comment"># use set to avoid duplicates</span>
+<span class="line-num">5021</span>   <span class="ruby-identifier">totient_function</span> = <span class="ruby-identifier">n</span>
+<span class="line-num">5022</span>   <span class="ruby-keyword">if</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+<span class="line-num">5023</span>     <span class="ruby-identifier">totient_function</span> = <span class="ruby-value">0</span>
+<span class="line-num">5024</span>   <span class="ruby-keyword">else</span>
+<span class="line-num">5025</span>     <span class="ruby-identifier">i</span> = <span class="ruby-value">2</span>
+<span class="line-num">5026</span>     <span class="ruby-keyword">while</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">n</span>
+<span class="line-num">5027</span>       <span class="ruby-keyword">if</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+<span class="line-num">5028</span>         <span class="ruby-identifier">distinct_prime_factors</span> <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">i</span>)
+<span class="line-num">5029</span>         <span class="ruby-identifier">n</span> = <span class="ruby-identifier">n</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">i</span>
+<span class="line-num">5030</span>       <span class="ruby-keyword">else</span>
+<span class="line-num">5031</span>         <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+<span class="line-num">5032</span>       <span class="ruby-keyword">end</span>
+<span class="line-num">5033</span>     <span class="ruby-keyword">end</span>
+<span class="line-num">5034</span>     <span class="ruby-keyword">if</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
+<span class="line-num">5035</span>       <span class="ruby-identifier">distinct_prime_factors</span>.<span class="ruby-identifier">add</span>(<span class="ruby-identifier">n</span>)
+<span class="line-num">5036</span>     <span class="ruby-keyword">end</span> <span class="ruby-comment"># picks up prime factors &gt; sqrt(n)</span>
+<span class="line-num">5037</span>     <span class="ruby-keyword">if</span> (<span class="ruby-identifier">distinct_prime_factors</span>.<span class="ruby-identifier">size</span>) <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+<span class="line-num">5038</span>       <span class="ruby-comment"># empty set means denominator is prime</span>
+<span class="line-num">5039</span>       <span class="ruby-identifier">totient_function</span> = <span class="ruby-identifier">n</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>
+<span class="line-num">5040</span>     <span class="ruby-keyword">else</span>
+<span class="line-num">5041</span>       <span class="ruby-keyword">for</span> <span class="ruby-identifier">p</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">distinct_prime_factors</span>
+<span class="line-num">5042</span>         <span class="ruby-identifier">totient_function</span> = (<span class="ruby-identifier">totient_function</span> <span class="ruby-operator">*</span> (<span class="ruby-identifier">p</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>)) <span class="ruby-operator">/</span> <span class="ruby-identifier">p</span>
+<span class="line-num">5043</span>       <span class="ruby-keyword">end</span>
+<span class="line-num">5044</span>     <span class="ruby-keyword">end</span>
+<span class="line-num">5045</span>     <span class="ruby-identifier">totient_function</span>
+<span class="line-num">5046</span>   <span class="ruby-keyword">end</span>
+<span class="line-num">5047</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-proper_fractions2" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-proper_fractions2" title="Link to this method">
+                <span class="method-name">proper_fractions2</span>
+                <span class="method-args">(n)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="proper_fractions2-source">
+            <pre class="ruby">     <span class="ruby-comment"># File doc_wrappers/comprehensive_namespaces.rb</span>
+<span class="line-num">5053</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">proper_fractions2</span>(<span class="ruby-identifier">n</span>)
+<span class="line-num">5054</span>   <span class="ruby-keyword">return</span> <span class="ruby-value">0</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">1</span>
+<span class="line-num">5055</span> 
+<span class="line-num">5056</span>   <span class="ruby-constant">Prime</span>.<span class="ruby-identifier">prime_division</span>(<span class="ruby-identifier">n</span>).<span class="ruby-identifier">inject</span>(<span class="ruby-value">1</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">memo</span>, <span class="ruby-identifier">pair</span><span class="ruby-operator">|</span>
+<span class="line-num">5057</span>     <span class="ruby-identifier">memo</span> <span class="ruby-operator">*</span> (<span class="ruby-identifier">pair</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-operator">*</span> <span class="ruby-identifier">pair</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">**</span> (<span class="ruby-identifier">pair</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">-</span> <span class="ruby-value">1</span>)
+<span class="line-num">5058</span>   <span class="ruby-keyword">end</span>
+<span class="line-num">5059</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-roman_to_int" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-roman_to_int" title="Link to this method">
+                <span class="method-name">roman_to_int</span>
+                <span class="method-args">(s)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="roman_to_int-source">
+            <pre class="ruby">     <span class="ruby-comment"># File doc_wrappers/comprehensive_namespaces.rb</span>
+<span class="line-num">5335</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">roman_to_int</span>(<span class="ruby-identifier">s</span>)
+<span class="line-num">5336</span>   <span class="ruby-identifier">lookup</span> = { <span class="ruby-string">&quot;I&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">1</span>,
+<span class="line-num">5337</span>              <span class="ruby-string">&quot;V&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">5</span>,
+<span class="line-num">5338</span>              <span class="ruby-string">&quot;X&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">10</span>,
+<span class="line-num">5339</span>              <span class="ruby-string">&quot;L&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">50</span>,
+<span class="line-num">5340</span>              <span class="ruby-string">&quot;C&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">100</span>,
+<span class="line-num">5341</span>              <span class="ruby-string">&quot;D&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">500</span>,
+<span class="line-num">5342</span>              <span class="ruby-string">&quot;M&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">1000</span> }
+<span class="line-num">5343</span>   <span class="ruby-identifier">z</span> = <span class="ruby-value">0</span>
+<span class="line-num">5344</span>   <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-identifier">s</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">2</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+<span class="line-num">5345</span>     <span class="ruby-keyword">if</span> <span class="ruby-identifier">lookup</span>[<span class="ruby-identifier">s</span>[<span class="ruby-identifier">i</span>]] <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">lookup</span>[<span class="ruby-identifier">s</span>[<span class="ruby-identifier">i</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>]]
+<span class="line-num">5346</span>       <span class="ruby-identifier">z</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">lookup</span>[<span class="ruby-identifier">s</span>[<span class="ruby-identifier">i</span>]]
+<span class="line-num">5347</span>     <span class="ruby-keyword">else</span>
+<span class="line-num">5348</span>       <span class="ruby-identifier">z</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">lookup</span>[<span class="ruby-identifier">s</span>[<span class="ruby-identifier">i</span>]]
+<span class="line-num">5349</span>     <span class="ruby-keyword">end</span>
+<span class="line-num">5350</span>   <span class="ruby-keyword">end</span>
+<span class="line-num">5351</span>   <span class="ruby-identifier">z</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">lookup</span>[<span class="ruby-identifier">s</span>[<span class="ruby-value">-1</span>]]
+<span class="line-num">5352</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p><img src="assets/roman_to_int.png"></p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-sieve_of_eratosthenes" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-sieve_of_eratosthenes" title="Link to this method">
+                <span class="method-name">sieve_of_eratosthenes</span>
+                <span class="method-args">(n)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="sieve_of_eratosthenes-source">
+            <pre class="ruby">     <span class="ruby-comment"># File doc_wrappers/comprehensive_namespaces.rb</span>
+<span class="line-num">5297</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">sieve_of_eratosthenes</span>(<span class="ruby-identifier">n</span>)
+<span class="line-num">5298</span>   <span class="ruby-identifier">bool</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">n</span>, <span class="ruby-keyword">true</span>)
+<span class="line-num">5299</span>   <span class="ruby-identifier">bool</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">bool</span>[<span class="ruby-value">1</span>] = <span class="ruby-keyword">false</span>, <span class="ruby-keyword">false</span>
+<span class="line-num">5300</span> 
+<span class="line-num">5301</span>   <span class="ruby-identifier">tmp</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sqrt</span>(<span class="ruby-identifier">n</span>).<span class="ruby-identifier">to_i</span>
+<span class="line-num">5302</span> 
+<span class="line-num">5303</span>   (<span class="ruby-value">2</span><span class="ruby-operator">..</span><span class="ruby-identifier">tmp</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+<span class="line-num">5304</span>     <span class="ruby-keyword">if</span> <span class="ruby-identifier">bool</span>[<span class="ruby-identifier">i</span>]
+<span class="line-num">5305</span>       (<span class="ruby-identifier">i</span><span class="ruby-operator">**</span><span class="ruby-value">2</span><span class="ruby-operator">...</span><span class="ruby-identifier">n</span>).<span class="ruby-identifier">step</span>(<span class="ruby-identifier">i</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span> <span class="ruby-identifier">bool</span>[<span class="ruby-identifier">j</span>] = <span class="ruby-keyword">false</span>}
+<span class="line-num">5306</span>     <span class="ruby-keyword">end</span>
+<span class="line-num">5307</span>   <span class="ruby-keyword">end</span>
+<span class="line-num">5308</span> 
+<span class="line-num">5309</span>   <span class="ruby-identifier">count</span> = <span class="ruby-value">0</span>
+<span class="line-num">5310</span>   <span class="ruby-identifier">bool</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">b</span>; <span class="ruby-identifier">count</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span> <span class="ruby-keyword">end</span>}
+<span class="line-num">5311</span>   <span class="ruby-keyword">return</span> <span class="ruby-identifier">count</span>
+<span class="line-num">5312</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-sieves_primes" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-sieves_primes" title="Link to this method">
+                <span class="method-name">sieves_primes</span>
+                <span class="method-args">(max)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="sieves_primes-source">
+            <pre class="ruby">     <span class="ruby-comment"># File doc_wrappers/comprehensive_namespaces.rb</span>
+<span class="line-num">5281</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">sieves_primes</span>(<span class="ruby-identifier">max</span>)
+<span class="line-num">5282</span>   <span class="ruby-identifier">nums</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">max</span>, <span class="ruby-value">1</span>)
+<span class="line-num">5283</span>   <span class="ruby-identifier">nums</span>[<span class="ruby-value">0</span>] = <span class="ruby-identifier">nums</span>[<span class="ruby-value">1</span>] = <span class="ruby-value">0</span>
+<span class="line-num">5284</span> 
+<span class="line-num">5285</span>   (<span class="ruby-value">2</span><span class="ruby-operator">..</span><span class="ruby-constant">Math</span>.<span class="ruby-identifier">sqrt</span>(<span class="ruby-identifier">max</span>)).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">sieve</span><span class="ruby-operator">|</span>
+<span class="line-num">5286</span>     <span class="ruby-keyword">if</span> <span class="ruby-identifier">nums</span>[<span class="ruby-identifier">sieve</span>] <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+<span class="line-num">5287</span>       (<span class="ruby-value">2</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">sieve</span>).<span class="ruby-identifier">step</span>(<span class="ruby-identifier">max</span>, <span class="ruby-identifier">sieve</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">num</span><span class="ruby-operator">|</span>
+<span class="line-num">5288</span>         <span class="ruby-identifier">nums</span>[<span class="ruby-identifier">num</span>] = <span class="ruby-value">0</span>
+<span class="line-num">5289</span>       <span class="ruby-keyword">end</span>
+<span class="line-num">5290</span>     <span class="ruby-keyword">end</span>
+<span class="line-num">5291</span>   <span class="ruby-keyword">end</span>
+<span class="line-num">5292</span> 
+<span class="line-num">5293</span>   <span class="ruby-identifier">primes</span> = (<span class="ruby-value">2</span><span class="ruby-operator">..</span><span class="ruby-identifier">max</span>).<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">num</span><span class="ruby-operator">|</span> <span class="ruby-identifier">nums</span>[<span class="ruby-identifier">num</span>] <span class="ruby-operator">==</span> <span class="ruby-value">1</span> }
+<span class="line-num">5294</span>   <span class="ruby-identifier">primes</span>.<span class="ruby-identifier">size</span>
+<span class="line-num">5295</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">en.wikipedia.org/wiki/Sieve_of_Eratosthenes</a> sieves prime method</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-subset_sum" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-subset_sum" title="Link to this method">
+                <span class="method-name">subset_sum</span>
+                <span class="method-args">(numbers, target, partial=[])</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="subset_sum-source">
+            <pre class="ruby">     <span class="ruby-comment"># File doc_wrappers/comprehensive_namespaces.rb</span>
+<span class="line-num">5396</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">subset_sum</span>(<span class="ruby-identifier">numbers</span>, <span class="ruby-identifier">target</span>, <span class="ruby-identifier">partial</span>=[])
+<span class="line-num">5397</span>   <span class="ruby-identifier">s</span> = <span class="ruby-identifier">partial</span>.<span class="ruby-identifier">inject</span>(<span class="ruby-value">0</span>, <span class="ruby-value">:+</span>)
+<span class="line-num">5398</span>   <span class="ruby-comment"># check if the partial sum is equals to target</span>
+<span class="line-num">5399</span> 
+<span class="line-num">5400</span>   <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;sum(#{partial})=#{target}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">s</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">target</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">partial</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">3</span>
+<span class="line-num">5401</span> 
+<span class="line-num">5402</span>   <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">s</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">target</span> <span class="ruby-comment"># if we reach the number why bother to continue</span>
+<span class="line-num">5403</span> 
+<span class="line-num">5404</span>   (<span class="ruby-value">0</span><span class="ruby-operator">..</span>(<span class="ruby-identifier">numbers</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>)).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+<span class="line-num">5405</span>     <span class="ruby-identifier">n</span> = <span class="ruby-identifier">numbers</span>[<span class="ruby-identifier">i</span>]
+<span class="line-num">5406</span>     <span class="ruby-identifier">remaining</span> = <span class="ruby-identifier">numbers</span>.<span class="ruby-identifier">drop</span>(<span class="ruby-identifier">i</span><span class="ruby-value">+1</span>)
+<span class="line-num">5407</span>     <span class="ruby-identifier">subset_sum</span>(<span class="ruby-identifier">remaining</span>, <span class="ruby-identifier">target</span>, <span class="ruby-identifier">partial</span> <span class="ruby-operator">+</span> [<span class="ruby-identifier">n</span>])
+<span class="line-num">5408</span>   <span class="ruby-keyword">end</span>
+<span class="line-num">5409</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <span id="method-i-subset_sum-label-Content+from+popular_algorithms-2Fnumbers-2Fthree_sum.rb+-3D-3D-3D" class="legacy-anchor"></span>
+<h3 id="method-i-subset_sum-content-from-popularalgorithmsnumbersthreesumrb-"><a href="#method-i-subset_sum-content-from-popularalgorithmsnumbersthreesumrb-">Content from popular_algorithms/numbers/three_sum.rb ===</a></h3>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-sum_natural_num_looping" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-sum_natural_num_looping" title="Link to this method">
+                <span class="method-name">sum_natural_num_looping</span>
+                <span class="method-args">(number)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="sum_natural_num_looping-source">
+            <pre class="ruby">     <span class="ruby-comment"># File doc_wrappers/comprehensive_namespaces.rb</span>
+<span class="line-num">5372</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">sum_natural_num_looping</span>(<span class="ruby-identifier">number</span>)
+<span class="line-num">5373</span>   <span class="ruby-identifier">sum</span> = <span class="ruby-value">0</span>
+<span class="line-num">5374</span>   <span class="ruby-identifier">curr_num</span> = <span class="ruby-value">0</span>
+<span class="line-num">5375</span>   <span class="ruby-keyword">until</span> <span class="ruby-identifier">curr_num</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">number</span>
+<span class="line-num">5376</span>     <span class="ruby-identifier">sum</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">curr_num</span>
+<span class="line-num">5377</span>     <span class="ruby-identifier">curr_num</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+<span class="line-num">5378</span>   <span class="ruby-keyword">end</span>
+<span class="line-num">5379</span>   <span class="ruby-identifier">sum</span>
+<span class="line-num">5380</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>loop</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-sum_natural_num_recursion" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-sum_natural_num_recursion" title="Link to this method">
+                <span class="method-name">sum_natural_num_recursion</span>
+                <span class="method-args">(number)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="sum_natural_num_recursion-source">
+            <pre class="ruby">     <span class="ruby-comment"># File doc_wrappers/comprehensive_namespaces.rb</span>
+<span class="line-num">5362</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">sum_natural_num_recursion</span>(<span class="ruby-identifier">number</span>)
+<span class="line-num">5363</span>   <span class="ruby-keyword">if</span> <span class="ruby-identifier">number</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+<span class="line-num">5364</span>     <span class="ruby-keyword">return</span> <span class="ruby-identifier">number</span>
+<span class="line-num">5365</span>   <span class="ruby-keyword">end</span>
+<span class="line-num">5366</span>   <span class="ruby-identifier">sum</span> = <span class="ruby-identifier">number</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">sum_natural_num_recursion</span>(<span class="ruby-identifier">number</span><span class="ruby-value">-1</span>)
+<span class="line-num">5367</span>   <span class="ruby-identifier">sum</span>
+<span class="line-num">5368</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <p>recursion</p>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+      <div id="method-i-two_sum" class="method-detail anchor-link ">
+        <div class="method-header">
+
+            <div class="method-heading">
+              <a href="#method-i-two_sum" title="Link to this method">
+                <span class="method-name">two_sum</span>
+                <span class="method-args">(nums, target)</span>
+              </a>
+            </div>
+
+        </div>
+
+
+          <div class="method-controls">
+            <details class="method-source-toggle">
+              <summary>Source</summary>
+            </details>
+          </div>
+          <div class="method-source-code" id="two_sum-source">
+            <pre class="ruby">     <span class="ruby-comment"># File doc_wrappers/comprehensive_namespaces.rb</span>
+<span class="line-num">5416</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">two_sum</span>(<span class="ruby-identifier">nums</span>, <span class="ruby-identifier">target</span>)
+<span class="line-num">5417</span>   <span class="ruby-identifier">possible_remainders</span> = {}
+<span class="line-num">5418</span>   <span class="ruby-identifier">nums</span>.<span class="ruby-identifier">each_with_index</span>  <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">|</span>
+<span class="line-num">5419</span>     <span class="ruby-identifier">subtracted</span> = <span class="ruby-identifier">target</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">value</span>
+<span class="line-num">5420</span>     <span class="ruby-keyword">if</span> <span class="ruby-identifier">possible_remainders</span>[<span class="ruby-identifier">value</span>].<span class="ruby-identifier">nil?</span>
+<span class="line-num">5421</span>       <span class="ruby-identifier">possible_remainders</span>[<span class="ruby-identifier">subtracted</span>] = <span class="ruby-identifier">index</span>
+<span class="line-num">5422</span>     <span class="ruby-keyword">else</span>
+<span class="line-num">5423</span>       <span class="ruby-keyword">return</span> [<span class="ruby-identifier">possible_remainders</span>[<span class="ruby-identifier">value</span>], <span class="ruby-identifier">index</span>]
+<span class="line-num">5424</span>     <span class="ruby-keyword">end</span>
+<span class="line-num">5425</span>   <span class="ruby-keyword">end</span>
+<span class="line-num">5426</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+
+
+
+        <div class="method-description">
+
+
+          <span id="method-i-two_sum-label-Content+from+popular_algorithms-2Fnumbers-2Ftwo_sum.rb+-3D-3D-3D" class="legacy-anchor"></span>
+<h3 id="method-i-two_sum-content-from-popularalgorithmsnumberstwosumrb-"><a href="#method-i-two_sum-content-from-popularalgorithmsnumberstwosumrb-">Content from popular_algorithms/numbers/two_sum.rb ===</a></h3>
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+    </section>
+
+
+
+
+  </section>
+
+</main>
+
+<aside class="table-of-contents" role="complementary" aria-label="Table of Contents">
+  <div class="toc-sticky">
+    <h3 class="toc-heading">On This Page</h3>
+    <nav class="toc-nav" id="toc-nav" aria-label="Page sections">
+      <!-- Generated by JavaScript based on page headings -->
+    </nav>
+  </div>
+</aside>
+
+
+<footer class="site-footer">
+  
+
+  <div class="footer-bottom">
+    <p>
+      Generated by <a href="https://ruby.github.io/rdoc/">RDoc 7.1.0</a>
+      using the Aliki theme by <a href="http://st0012.dev">Stan Lo</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+

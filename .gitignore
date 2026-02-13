@@ -4,7 +4,7 @@
 /**/.DS_Store
 .DS_Store
 /scratch/
-/doc/
-/.yardoc/
-.yardoc/**
-/.yardoc/
+#/doc/
+#/.yardoc/
+#.yardoc/**
+#/.yardoc/

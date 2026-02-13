@@ -24,5 +24,5 @@ def gen(res, n, o, c, s)
   end
 end
 
-generate_parenthesis(5).to_s
+puts generate_parenthesis(2).to_s
 

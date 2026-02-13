@@ -1,0 +1,6 @@
+---
+generator_name: aliki
+title: Ruby Algorithms Documentation
+main: README.md
+line_numbers: true
+show_hash: true

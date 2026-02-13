@@ -2,18 +2,54 @@ GEM
   remote: https://rubygems.org/
   specs:
     bitarray (1.2.0)
+    cgi (0.5.1)
+    cgi (0.5.1-java)
+    coderay (1.1.3)
+    date (3.5.1)
+    date (3.5.1-java)
     docile (1.4.0)
+    erb (4.0.4)
+      cgi (>= 0.3.3)
+    erb (4.0.4-java)
+      cgi (>= 0.3.3)
+    ffi (1.17.3-java)
+    io-console (0.8.2)
+    io-console (0.8.2-java)
+    jar-dependencies (0.5.5)
+    method_source (1.1.0)
     murmurhash3 (0.1.6)
     murmurhash3 (0.1.6-java)
+    pry (0.16.0)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
+      reline (>= 0.6.0)
+    pry (0.16.0-java)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
+      reline (>= 0.6.0)
+      spoon (~> 0.0)
+    psych (5.3.1)
+      date
+      stringio
+    psych (5.3.1-java)
+      date
+      jar-dependencies (>= 0.1.7)
+    rdoc (7.1.0)
+      erb
+      psych (>= 4.0.0)
+      tsort
+    reline (0.6.3)
+      io-console (~> 0.5)
     simplecov (0.22.0)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
       simplecov_json_formatter (~> 0.1)
     simplecov-html (0.12.3)
     simplecov_json_formatter (0.1.4)
-    webrick (1.7.0)
-    yard (0.9.27)
-      webrick (~> 1.7.0)
+    spoon (0.0.6)
+      ffi
+    stringio (3.2.0)
+    tsort (0.2.0)
 
 PLATFORMS
   java
@@ -22,8 +58,9 @@ PLATFORMS
 DEPENDENCIES
   bitarray
   murmurhash3
+  pry (~> 0.16.0)
+  rdoc (~> 7.1)
   simplecov (~> 0.22.0)
-  yard
 
 BUNDLED WITH
-   2.4.2
+   2.6.2

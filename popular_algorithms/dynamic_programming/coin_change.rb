@@ -29,7 +29,7 @@ require 'set'
 # Example:
 # coin = [1, 2], amount = 3
 
-# If 1 coin wasn't given, it'd have been bad. cuz of below flow.
+# If 1 coin wasn't added at the end ( dp[i - c] + 1 <--) , it'd have been bad. cuz of below flow.
 # c: 2
 # i = 1
 # idx:    0       1       2                 3
@@ -103,7 +103,7 @@ def dfs(coins, amount, memo)
 end
 
 # Approach 3: DP bottom-up
-# Clearer Code, DP Soltion
+# Clearer Code, DP Solution
 def coin_change_dp(coins, amount)
   return 0 if amount == 0
   dp = Array.new(amount + 1, Float::INFINITY)
@@ -136,6 +136,31 @@ def coin_change_fastest(coins, amount)
   dp[amount]
 end
 
+def coin_change_recursion(denoms, change)
+  # Use memoization to avoid recalculating
+  @memo ||= {}
+  return @memo[change] if @memo[change]
+  best = nil
+  min_coins = Float::INFINITY
+  denoms = denoms.sort!.reverse()
+  denoms.each do |coin|
+    next if coin > change
+    if change == coin
+      current = [coin]
+    else
+      remaining = coin_change_recursion(denoms, change - coin)
+      current = [coin] + remaining if remaining
+    end
+    if current && current.length < min_coins
+      min_coins = current.length
+      best = current
+    end
+  end
+  @memo[change] = best
+end
+
+res = coin_change_recursion([4,3,1], 6)
+puts res.length
 puts coin_change_bfs([186, 419, 83, 408], 6249) == 20
 puts coin_change_bfs([1, 2, 5], 11) == 3
 puts coin_change_bfs([2], 3) == -1
