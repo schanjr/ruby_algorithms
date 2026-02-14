@@ -579,72 +579,72 @@ FOR each unvisited neighbour of the currente vertex
           </div>
           <div class="method-source-code" id="dijkstra-source">
             <pre class="ruby">     <span class="ruby-comment"># File doc_wrappers/comprehensive_namespaces.rb</span>
-<span class="line-num">5013</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dijkstra</span>(<span class="ruby-identifier">starting_city</span>, <span class="ruby-identifier">other_cities</span>)
-<span class="line-num">5014</span>   <span class="ruby-comment"># The routes_from_city hash table below holds the data of all price_infos</span>
-<span class="line-num">5015</span>   <span class="ruby-comment"># from the given city to all other destinations, and the city which it</span>
-<span class="line-num">5016</span>   <span class="ruby-comment"># took to get there:</span>
-<span class="line-num">5017</span>   <span class="ruby-identifier">routes_from_city</span> = {}
-<span class="line-num">5018</span>   <span class="ruby-comment"># The format of this data is:</span>
-<span class="line-num">5019</span>   <span class="ruby-comment"># {city =&gt; [price, other city which immediately precedes this city</span>
-<span class="line-num">5020</span>   <span class="ruby-comment"># along the path from the original city]}</span>
-<span class="line-num">5021</span> 
-<span class="line-num">5022</span>   <span class="ruby-comment"># In our example this will end up being:</span>
-<span class="line-num">5023</span>   <span class="ruby-comment"># {atlanta =&gt; [0, nil], boston =&gt; [100, atlanta], chicago =&gt; [200, denver],</span>
-<span class="line-num">5024</span>   <span class="ruby-comment"># denver =&gt; [160, atlanta], el_paso =&gt; [280, chicago]}</span>
+<span class="line-num">4999</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dijkstra</span>(<span class="ruby-identifier">starting_city</span>, <span class="ruby-identifier">other_cities</span>)
+<span class="line-num">5000</span>   <span class="ruby-comment"># The routes_from_city hash table below holds the data of all price_infos</span>
+<span class="line-num">5001</span>   <span class="ruby-comment"># from the given city to all other destinations, and the city which it</span>
+<span class="line-num">5002</span>   <span class="ruby-comment"># took to get there:</span>
+<span class="line-num">5003</span>   <span class="ruby-identifier">routes_from_city</span> = {}
+<span class="line-num">5004</span>   <span class="ruby-comment"># The format of this data is:</span>
+<span class="line-num">5005</span>   <span class="ruby-comment"># {city =&gt; [price, other city which immediately precedes this city</span>
+<span class="line-num">5006</span>   <span class="ruby-comment"># along the path from the original city]}</span>
+<span class="line-num">5007</span> 
+<span class="line-num">5008</span>   <span class="ruby-comment"># In our example this will end up being:</span>
+<span class="line-num">5009</span>   <span class="ruby-comment"># {atlanta =&gt; [0, nil], boston =&gt; [100, atlanta], chicago =&gt; [200, denver],</span>
+<span class="line-num">5010</span>   <span class="ruby-comment"># denver =&gt; [160, atlanta], el_paso =&gt; [280, chicago]}</span>
+<span class="line-num">5011</span> 
+<span class="line-num">5012</span>   <span class="ruby-comment"># Since it costs nothing to get to the starting city from the starting city:</span>
+<span class="line-num">5013</span>   <span class="ruby-identifier">routes_from_city</span>[<span class="ruby-identifier">starting_city</span>] = [<span class="ruby-value">0</span>, <span class="ruby-identifier">starting_city</span>]
+<span class="line-num">5014</span> 
+<span class="line-num">5015</span>   <span class="ruby-comment"># When initializing our data, we set up all other cities having an</span>
+<span class="line-num">5016</span>   <span class="ruby-comment"># infinite cost - since the cost and the path to get to each other city</span>
+<span class="line-num">5017</span>   <span class="ruby-comment"># is currently unknown:</span>
+<span class="line-num">5018</span>   <span class="ruby-identifier">other_cities</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">city</span><span class="ruby-operator">|</span>
+<span class="line-num">5019</span>     <span class="ruby-identifier">routes_from_city</span>[<span class="ruby-identifier">city</span>] = [<span class="ruby-constant">Float</span><span class="ruby-operator">::</span><span class="ruby-constant">INFINITY</span>, <span class="ruby-keyword">nil</span>]
+<span class="line-num">5020</span>   <span class="ruby-keyword">end</span>
+<span class="line-num">5021</span>   <span class="ruby-comment"># In our example, our data starts out as:</span>
+<span class="line-num">5022</span>   <span class="ruby-comment"># {atlanta =&gt; [0, nil], boston =&gt; [Float::INFINITY, nil],</span>
+<span class="line-num">5023</span>   <span class="ruby-comment"># chicago =&gt; [Float::INFINITY, nil],</span>
+<span class="line-num">5024</span>   <span class="ruby-comment"># denver =&gt; [Float::INFINITY, nil], el_paso =&gt; [Float::INFINITY, nil]}</span>
 <span class="line-num">5025</span> 
-<span class="line-num">5026</span>   <span class="ruby-comment"># Since it costs nothing to get to the starting city from the starting city:</span>
-<span class="line-num">5027</span>   <span class="ruby-identifier">routes_from_city</span>[<span class="ruby-identifier">starting_city</span>] = [<span class="ruby-value">0</span>, <span class="ruby-identifier">starting_city</span>]
+<span class="line-num">5026</span>   <span class="ruby-comment"># We keep track of which cities we visited in this array:</span>
+<span class="line-num">5027</span>   <span class="ruby-identifier">visited_cities</span> = []
 <span class="line-num">5028</span> 
-<span class="line-num">5029</span>   <span class="ruby-comment"># When initializing our data, we set up all other cities having an</span>
-<span class="line-num">5030</span>   <span class="ruby-comment"># infinite cost - since the cost and the path to get to each other city</span>
-<span class="line-num">5031</span>   <span class="ruby-comment"># is currently unknown:</span>
-<span class="line-num">5032</span>   <span class="ruby-identifier">other_cities</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">city</span><span class="ruby-operator">|</span>
-<span class="line-num">5033</span>     <span class="ruby-identifier">routes_from_city</span>[<span class="ruby-identifier">city</span>] = [<span class="ruby-constant">Float</span><span class="ruby-operator">::</span><span class="ruby-constant">INFINITY</span>, <span class="ruby-keyword">nil</span>]
-<span class="line-num">5034</span>   <span class="ruby-keyword">end</span>
-<span class="line-num">5035</span>   <span class="ruby-comment"># In our example, our data starts out as:</span>
-<span class="line-num">5036</span>   <span class="ruby-comment"># {atlanta =&gt; [0, nil], boston =&gt; [Float::INFINITY, nil],</span>
-<span class="line-num">5037</span>   <span class="ruby-comment"># chicago =&gt; [Float::INFINITY, nil],</span>
-<span class="line-num">5038</span>   <span class="ruby-comment"># denver =&gt; [Float::INFINITY, nil], el_paso =&gt; [Float::INFINITY, nil]}</span>
-<span class="line-num">5039</span> 
-<span class="line-num">5040</span>   <span class="ruby-comment"># We keep track of which cities we visited in this array:</span>
-<span class="line-num">5041</span>   <span class="ruby-identifier">visited_cities</span> = []
-<span class="line-num">5042</span> 
-<span class="line-num">5043</span>   <span class="ruby-comment"># We begin visiting the starting city by making it the current_city:</span>
-<span class="line-num">5044</span>   <span class="ruby-identifier">current_city</span> = <span class="ruby-identifier">starting_city</span>
-<span class="line-num">5045</span> 
-<span class="line-num">5046</span>   <span class="ruby-comment"># We launch the heart of the algorithm, which is a loop that visits</span>
-<span class="line-num">5047</span>   <span class="ruby-comment"># each city:</span>
-<span class="line-num">5048</span>   <span class="ruby-keyword">while</span> <span class="ruby-identifier">current_city</span>
-<span class="line-num">5049</span>     <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Current_city: #{current_city.name}&quot;</span>
-<span class="line-num">5050</span>     <span class="ruby-comment"># We officially visit the current city:</span>
-<span class="line-num">5051</span>     <span class="ruby-identifier">visited_cities</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">current_city</span>
-<span class="line-num">5052</span> 
-<span class="line-num">5053</span>     <span class="ruby-comment"># We check each route from the current city:</span>
-<span class="line-num">5054</span>     <span class="ruby-identifier">current_city</span>.<span class="ruby-identifier">routes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">city</span>, <span class="ruby-identifier">price_info</span><span class="ruby-operator">|</span>
-<span class="line-num">5055</span>       <span class="ruby-comment"># If the route from the starting city to the other city</span>
-<span class="line-num">5056</span>       <span class="ruby-comment"># is cheaper than currently recorded in routes_from_city, we update it:</span>
-<span class="line-num">5057</span>       <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">routes_from_city</span>[<span class="ruby-identifier">city</span>][<span class="ruby-value">0</span>] <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">price_info</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">routes_from_city</span>[<span class="ruby-identifier">current_city</span>][<span class="ruby-value">0</span>]
-<span class="line-num">5058</span> 
-<span class="line-num">5059</span>       <span class="ruby-identifier">routes_from_city</span>[<span class="ruby-identifier">city</span>] = [<span class="ruby-identifier">price_info</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">routes_from_city</span>[<span class="ruby-identifier">current_city</span>][<span class="ruby-value">0</span>], <span class="ruby-identifier">current_city</span>]
-<span class="line-num">5060</span>     <span class="ruby-keyword">end</span>
-<span class="line-num">5061</span> 
-<span class="line-num">5062</span>     <span class="ruby-comment"># We determine which city to visit next:</span>
-<span class="line-num">5063</span>     <span class="ruby-identifier">current_city</span> = <span class="ruby-keyword">nil</span>
-<span class="line-num">5064</span>     <span class="ruby-identifier">cheapest_route_from_current_city</span> = <span class="ruby-constant">Float</span><span class="ruby-operator">::</span><span class="ruby-constant">INFINITY</span>
-<span class="line-num">5065</span>     <span class="ruby-comment"># We check all available routes:</span>
-<span class="line-num">5066</span>     <span class="ruby-identifier">routes_from_city</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">city</span>, <span class="ruby-identifier">price_info</span><span class="ruby-operator">|</span>
-<span class="line-num">5067</span>       <span class="ruby-comment"># if this route is the cheapest from this city, and it has not yet been</span>
-<span class="line-num">5068</span>       <span class="ruby-comment"># visited, it should be marked as the city we&#39;ll visit next:</span>
-<span class="line-num">5069</span>       <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">price_info</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">cheapest_route_from_current_city</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">visited_cities</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">city</span>)
-<span class="line-num">5070</span> 
-<span class="line-num">5071</span>       <span class="ruby-identifier">cheapest_route_from_current_city</span> = <span class="ruby-identifier">price_info</span>[<span class="ruby-value">0</span>]
-<span class="line-num">5072</span>       <span class="ruby-identifier">current_city</span> = <span class="ruby-identifier">city</span>
-<span class="line-num">5073</span>     <span class="ruby-keyword">end</span>
-<span class="line-num">5074</span> 
-<span class="line-num">5075</span>   <span class="ruby-keyword">end</span>
-<span class="line-num">5076</span> 
-<span class="line-num">5077</span>   <span class="ruby-identifier">routes_from_city</span>
-<span class="line-num">5078</span> <span class="ruby-keyword">end</span></pre>
+<span class="line-num">5029</span>   <span class="ruby-comment"># We begin visiting the starting city by making it the current_city:</span>
+<span class="line-num">5030</span>   <span class="ruby-identifier">current_city</span> = <span class="ruby-identifier">starting_city</span>
+<span class="line-num">5031</span> 
+<span class="line-num">5032</span>   <span class="ruby-comment"># We launch the heart of the algorithm, which is a loop that visits</span>
+<span class="line-num">5033</span>   <span class="ruby-comment"># each city:</span>
+<span class="line-num">5034</span>   <span class="ruby-keyword">while</span> <span class="ruby-identifier">current_city</span>
+<span class="line-num">5035</span>     <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Current_city: #{current_city.name}&quot;</span>
+<span class="line-num">5036</span>     <span class="ruby-comment"># We officially visit the current city:</span>
+<span class="line-num">5037</span>     <span class="ruby-identifier">visited_cities</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">current_city</span>
+<span class="line-num">5038</span> 
+<span class="line-num">5039</span>     <span class="ruby-comment"># We check each route from the current city:</span>
+<span class="line-num">5040</span>     <span class="ruby-identifier">current_city</span>.<span class="ruby-identifier">routes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">city</span>, <span class="ruby-identifier">price_info</span><span class="ruby-operator">|</span>
+<span class="line-num">5041</span>       <span class="ruby-comment"># If the route from the starting city to the other city</span>
+<span class="line-num">5042</span>       <span class="ruby-comment"># is cheaper than currently recorded in routes_from_city, we update it:</span>
+<span class="line-num">5043</span>       <span class="ruby-keyword">if</span> <span class="ruby-identifier">routes_from_city</span>[<span class="ruby-identifier">city</span>][<span class="ruby-value">0</span>] <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">price_info</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">routes_from_city</span>[<span class="ruby-identifier">current_city</span>][<span class="ruby-value">0</span>]
+<span class="line-num">5044</span>         <span class="ruby-identifier">routes_from_city</span>[<span class="ruby-identifier">city</span>] = [<span class="ruby-identifier">price_info</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">routes_from_city</span>[<span class="ruby-identifier">current_city</span>][<span class="ruby-value">0</span>], <span class="ruby-identifier">current_city</span>]
+<span class="line-num">5045</span>       <span class="ruby-keyword">end</span>
+<span class="line-num">5046</span>     <span class="ruby-keyword">end</span>
+<span class="line-num">5047</span> 
+<span class="line-num">5048</span>     <span class="ruby-comment"># We determine which city to visit next:</span>
+<span class="line-num">5049</span>     <span class="ruby-identifier">current_city</span> = <span class="ruby-keyword">nil</span>
+<span class="line-num">5050</span>     <span class="ruby-identifier">cheapest_route_from_current_city</span> = <span class="ruby-constant">Float</span><span class="ruby-operator">::</span><span class="ruby-constant">INFINITY</span>
+<span class="line-num">5051</span>     <span class="ruby-comment"># We check all available routes:</span>
+<span class="line-num">5052</span>     <span class="ruby-identifier">routes_from_city</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">city</span>, <span class="ruby-identifier">price_info</span><span class="ruby-operator">|</span>
+<span class="line-num">5053</span>       <span class="ruby-comment"># if this route is the cheapest from this city, and it has not yet been</span>
+<span class="line-num">5054</span>       <span class="ruby-comment"># visited, it should be marked as the city we&#39;ll visit next:</span>
+<span class="line-num">5055</span>       <span class="ruby-keyword">if</span> <span class="ruby-identifier">price_info</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">cheapest_route_from_current_city</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">visited_cities</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">city</span>)
+<span class="line-num">5056</span>         <span class="ruby-identifier">cheapest_route_from_current_city</span> = <span class="ruby-identifier">price_info</span>[<span class="ruby-value">0</span>]
+<span class="line-num">5057</span>         <span class="ruby-identifier">current_city</span> = <span class="ruby-identifier">city</span>
+<span class="line-num">5058</span>       <span class="ruby-keyword">end</span>
+<span class="line-num">5059</span>     <span class="ruby-keyword">end</span>
+<span class="line-num">5060</span> 
+<span class="line-num">5061</span>   <span class="ruby-keyword">end</span>
+<span class="line-num">5062</span> 
+<span class="line-num">5063</span>   <span class="ruby-identifier">routes_from_city</span>
+<span class="line-num">5064</span> <span class="ruby-keyword">end</span></pre>
           </div>
 
 
