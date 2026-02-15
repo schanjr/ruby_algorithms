@@ -8,3 +8,7 @@
 #/.yardoc/
 #.yardoc/**
 #/.yardoc/
+
+# Documentation folders
+doc/
+doc_wrappers/
